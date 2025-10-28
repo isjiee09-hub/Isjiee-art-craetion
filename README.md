@@ -768,6 +768,4 @@ ISJIEE/
       card.innerHTML = `<h3>${prog.title}</h3><p>${prog.desc}</p>`;
       container.appendChild(card);
     });
-  </script>
-</body>
-</html>
+  </scri
