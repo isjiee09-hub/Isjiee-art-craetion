@@ -1066,6 +1066,268 @@ setInterval(() => {
     <h2>Programme d’Anglais ISJIEE</h2>
     <p>Ce module aide les étudiants à développer leurs compétences en compréhension, prononciation et communication anglaise à travers des exercices interactifs, audios et quiz.</p>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISJIEE - Programme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>ISJIEE PROGRAMMES</h1>
+  <nav>
+    <a href="#programmes">Nos Programmes</a>
+    <a href="anglais.html">Anglais</a>
+    <a href="creativite.html">Créativité</a>
+    <a href="#videos">Vidéos</a>
+    <a href="#contact">Souscription</a>
+  </nav>
+</header>
+
+<section id="programmes" class="scroll-section">
+  <div class="card green">
+    <h2>Green Card</h2>
+    <p>Formation de base pour découvrir et lancer ton business.</p>
+  </div>
+  <div class="card blue">
+    <h2>Blue Card</h2>
+    <p>Apprentissage intermédiaire sur la gestion et la stratégie d’entreprise.</p>
+  </div>
+  <div class="card gold">
+    <h2>Gold Card</h2>
+    <p>Développement avancé, leadership et innovation.</p>
+  </div>
+  <div class="card leader">
+    <h2>Leadership Voice</h2>
+    <p>Communication, influence, motivation et prise de décision.</p>
+  </div>
+</section>
+
+<section id="bar">
+  <h2>BAR — Barème d’Application Requise</h2>
+  <ul>
+    <li>✔ Participation active — 25%</li>
+    <li>✔ Réalisation de projet — 30%</li>
+    <li>✔ Présence et discipline — 15%</li>
+    <li>✔ Test final et présentation — 30%</li>
+  </ul>
+</section>
+
+<section id="videos" class="video-gallery">
+  <h2>🎥 Nos vidéos de formation</h2>
+  <div class="videos">
+    <video src="video1.mp4" controls></video>
+    <video src="video2.mp4" controls></video>
+    <video src="video3.mp4" controls></video>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📬 Souscription</h2>
+  <form>
+    <input type="text" placeholder="Nom complet" required />
+    <input type="email" placeholder="Email" required />
+    <select>
+      <option>Choisir une formation</option>
+      <option>Green Card</option>
+      <option>Blue Card</option>
+      <option>Gold Card</option>
+      <option>Leadership Voice</option>
+      <option>Anglais</option>
+      <option>Créativité</option>
+    </select>
+    <button type="submit">S'inscrire</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 ISJIEE - Inspiré par la lumière, forgé dans le feu.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f3f6fa;
+  color: #222;
+}
+
+header {
+  background: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.scroll-section {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 2rem;
+}
+
+.card {
+  flex: 0 0 250px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  scroll-snap-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.green { border-top: 8px solid #2ecc71; }
+.blue { border-top: 8px solid #3498db; }
+.gold { border-top: 8px solid #f1c40f; }
+.leader { border-top: 8px solid #8e44ad; }
+
+#bar {
+  background: #fdfdfd;
+  padding: 2rem;
+  border-left: 6px solid #003366;
+}
+
+#bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.video-gallery {
+  text-align: center;
+  padding: 2rem;
+}
+
+.video-gallery .videos {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+video {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  gap: 10px;
+}
+
+#contact input, select, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Merci pour votre inscription à ISJIEE !");
+});
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISJIEE - Anglais</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>ISJIEE - Programme Anglais</h1>
+  <nav><a href="index.html">Retour</a></nav>
+</header>
+
+<section>
+  <h2>Cours d’Anglais Interactif</h2>
+  <p>Modules de prononciation, vocabulaire et communication pratique.</p>
+  <ul>
+    <li>Level 1: Everyday English</li>
+    <li>Level 2: Business English</li>
+    <li>Level 3: Speaking & Listening</li>
+  </ul>
+</section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISJIEE - Anglais</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>ISJIEE - Programme Anglais</h1>
+  <nav><a href="index.html">Retour</a></nav>
+</header>
+
+<section>
+  <h2>Cours d’Anglais Interactif</h2>
+  <p>Modules de prononciation, vocabulaire et communication pratique.</p>
+  <ul>
+    <li>Level 1: Everyday English</li>
+    <li>Level 2: Business English</li>
+    <li>Level 3: Speaking & Listening</li>
+  </ul>
+</section>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISJIEE - Créativité</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>ISJIEE - Espace Créatif</h1>
+  <nav><a href="index.html">Retour</a></nav>
+</header>
+
+<section>
+  <h2>Atelier de Créativité</h2>
+  <p>Exprime ton imagination à travers le design, l’écriture, la musique et la vidéo.</p>
+</section>
+</body>
+</html>
+
+
+
     <div class="video-box">
       <h3>Casier de vidéos</h3>
       <video controls width="90%">
