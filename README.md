@@ -834,3 +834,123 @@ ISJIEE/
   <script src="script.js"></script>
 </body>
 </html>
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #1a1a1a;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.7s ease;
+  width: 400%;
+}
+
+.slide {
+  flex: 1 0 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+}
+
+.green { background: linear-gradient(120deg, #00b894, #55efc4); }
+.blue { background: linear-gradient(120deg, #0984e3, #74b9ff); }
+.gold { background: linear-gradient(120deg, #d4af37, #f9d976); color: #333; }
+.leadership { background: linear-gradient(120deg, #6c5ce7, #a29bfe); }
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
+/* === BAR SYSTEM === */
+.bar {
+  background: rgba(255, 255, 255, 0.3);
+  height: 10px;
+  border-radius: 10px;
+  margin: 25px auto 10px;
+  width: 80%;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1.5s ease;
+}
+
+.green-bar { background-color: #00e676; }
+.blue-bar { background-color: #0984e3; }
+.gold-bar { background-color: #d4af37; }
+.purple-bar { background-color: #6c5ce7; }
+
+.bar-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+  const slider = document.querySelector(".slider");
+  if (index >= slides.length) index = 0;
+  if (index < 0) index = slides.length - 1;
+  currentIndex = index;
+  slider.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => showSlide(i));
+});
+
+// Auto défilement
+setInterval(() => {
+  showSlide(currentIndex + 1);
+}, 5000);
