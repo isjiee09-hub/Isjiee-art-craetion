@@ -1,2 +1,18 @@
-# Isjiee-art-craetion
-Isjiee art ceation est une plateforme de d'innovation ,de support et development des Jeunes entrepreneurs via à la creation d'affaire et de development personnel et leadership,Elle est aussi un environment d'apprentissage  sur la mise en valeur des potentialités  er d'explitation du monde digital et les multiples facette de development economique
+
+ISJIEE/
+│
+├── index.html          → page d’accueil (vitrine avec Kayla)
+├── style.css           → design général
+├── script.js           → animations, défilements, effets Kayla
+│
+├── /assets/            → images, icônes, audios
+│   ├── kayla.png
+│   ├── logo.png
+│   └── background.mp3
+│
+├── /modules/           → sous-pages ISJIEE
+│   ├── green-card.html
+│   ├── blue-card.html
+│   └── gold-card.html
+│
+└── README.md           → description officielle du projet ISJIEE
