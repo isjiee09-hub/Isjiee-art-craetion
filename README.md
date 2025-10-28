@@ -949,8 +949,233 @@ function showSlide(index) {
 dots.forEach((dot, i) => {
   dot.addEventListener("click", () => showSlide(i));
 });
-
-// Auto défilement
+,
 setInterval(() => {
   showSlide(currentIndex + 1);
 }, 5000);
+
+/ISJIEE
+│
+├── index.html              → page principale (Programmes)
+├── anglais.html             → page du cours d’anglais
+├── creativite.html          → page Créativité
+├── style.css
+├── script.js
+└── assets/videos/           → dossier pour tes futures vidéos
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISJIEE | Accueil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barre de navigation -->
+  <header class="navbar">
+    <h1>ISJIEE</h1>
+    <nav>
+      <a href="index.html" class="active">Accueil</a>
+      <a href="anglais.html">Anglais</a>
+      <a href="creativite.html">Créativité</a>
+    </nav>
+  </header>
+
+  <!-- Section principale -->
+  <section class="programmes">
+    <h2>Nos Programmes ISJIEE</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide green">
+          <h3>Green Card</h3>
+          <p>Formation de base pour apprendre à créer, vendre et gérer un petit business.</p>
+          <div class="bar"><div class="bar-fill green-bar" style="width:40%"></div></div>
+          <span class="bar-label">BAR : 40% – Niveau Débutant</span>
+        </div>
+
+        <div class="slide blue">
+          <h3>Blue Card</h3>
+          <p>Formation avancée sur les stratégies marketing et la création digitale.</p>
+          <div class="bar"><div class="bar-fill blue-bar" style="width:60%"></div></div>
+          <span class="bar-label">BAR : 60% – Niveau Intermédiaire</span>
+        </div>
+
+        <div class="slide gold">
+          <h3>Gold</h3>
+          <p>Programme élite pour les jeunes entrepreneurs avec coaching et financement.</p>
+          <div class="bar"><div class="bar-fill gold-bar" style="width:80%"></div></div>
+          <span class="bar-label">BAR : 80% – Niveau Avancé</span>
+        </div>
+
+        <div class="slide leadership">
+          <h3>Leadership Voice</h3>
+          <p>Développe ton leadership, ton charisme et ta communication d’impact.</p>
+          <div class="bar"><div class="bar-fill purple-bar" style="width:100%"></div></div>
+          <span class="bar-label">BAR : 100% – Niveau Maîtrise</span>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de souscription -->
+  <section class="subscribe">
+    <h2>Reste connecté à nos formations</h2>
+    <form>
+      <input type="text" placeholder="Nom complet" required>
+      <input type="email" placeholder="Adresse email" required>
+      <button type="submit">S’inscrire</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 ISJIEE — Inspiré par la lumière, forgé dans le feu.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISJIEE | Anglais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>ISJIEE</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="anglais.html" class="active">Anglais</a>
+      <a href="creativite.html">Créativité</a>
+    </nav>
+  </header>
+
+  <section class="anglais">
+    <h2>Programme d’Anglais ISJIEE</h2>
+    <p>Ce module aide les étudiants à développer leurs compétences en compréhension, prononciation et communication anglaise à travers des exercices interactifs, audios et quiz.</p>
+
+    <div class="video-box">
+      <h3>Casier de vidéos</h3>
+      <video controls width="90%">
+        <source src="assets/videos/lesson1.mp4" type="video/mp4">
+        Ton navigateur ne supporte pas la lecture vidéo.
+      </video>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ISJIEE</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISJIEE | Créativité</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>ISJIEE</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="anglais.html">Anglais</a>
+      <a href="creativite.html" class="active">Créativité</a>
+    </nav>
+  </header>
+
+  <section class="creativite">
+    <h2>Espace Créativité</h2>
+    <p>Ici, les étudiants peuvent explorer des projets artistiques, des idées innovantes et développer leur imagination à travers des ateliers et projets ISJIEE Art Creation.</p>
+    
+    <div class="gallery">
+      <div class="item">🎨 Design Mode</div>
+      <div class="item">💻 Création Digitale</div>
+      <div class="item">🎬 Vidéos Créatives</div>
+      <div class="item">🧠 Innovation</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ISJIEE</p>
+  </footer>
+</body>
+</html>
+
+.navbar {
+  background: #002244;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.navbar nav a.active {
+  border-bottom: 2px solid #ffd700;
+}
+
+.subscribe {
+  background: #f0f3f5;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.subscribe form {
+  margin-top: 15px;
+}
+
+.subscribe input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.subscribe button {
+  background: #002244;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery .item {
+  background: #ececec;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
