@@ -769,3 +769,68 @@ ISJIEE/
       container.appendChild(card);
     });
   </scri
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISJIEE Programmes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="programmes">
+    <h1>Nos Programmes ISJIEE</h1>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide green">
+          <h2>Green Card</h2>
+          <p>Formation de base pour apprendre à créer, vendre et gérer un petit business. Accès à des ateliers pratiques et outils de démarrage.</p>
+          <div class="bar">
+            <div class="bar-fill green-bar" style="width: 40%"></div>
+          </div>
+          <span class="bar-label">BAR : 40% – Niveau Débutant</span>
+        </div>
+
+        <div class="slide blue">
+          <h2>Blue Card</h2>
+          <p>Formation avancée pour développer ton entreprise digitale. Stratégies de marketing, communication et positionnement professionnel.</p>
+          <div class="bar">
+            <div class="bar-fill blue-bar" style="width: 60%"></div>
+          </div>
+          <span class="bar-label">BAR : 60% – Niveau Intermédiaire</span>
+        </div>
+
+        <div class="slide gold">
+          <h2>Gold</h2>
+          <p>Programme élite pour les jeunes entrepreneurs. Coaching, financement partiel et accès à des mentors expérimentés.</p>
+          <div class="bar">
+            <div class="bar-fill gold-bar" style="width: 80%"></div>
+          </div>
+          <span class="bar-label">BAR : 80% – Niveau Avancé</span>
+        </div>
+
+        <div class="slide leadership">
+          <h2>Leadership Voice</h2>
+          <p>Formation centrée sur le leadership et la communication d’impact. Développe ton influence et ta vision entrepreneuriale.</p>
+          <div class="bar">
+            <div class="bar-fill purple-bar" style="width: 100%"></div>
+          </div>
+          <span class="bar-label">BAR : 100% – Niveau Maîtrise</span>
+        </div>
+      </div>
+
+      <!-- Barre de navigation -->
+      <div class="nav-bar">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
