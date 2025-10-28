@@ -1086,7 +1086,182 @@ setInterval(() => {
     <a href="#contact">Souscription</a>
   </nav>
 </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISJIEE – American English Program</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+<header>
+  <h1>ISJIEE – American English Path</h1>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+  </nav>
+</header>
+
+<section class="english-section">
+  <h2>🇺🇸 Master American English with ISJIEE</h2>
+  <p>
+    Learn to speak, listen, and think in American English!  
+    Our structured program takes you from <strong>Beginner</strong> to <strong>TOEFL-ready</strong>,  
+    focusing on pronunciation, real-life situations, and vocabulary used in the U.S.
+  </p>
+
+  <div class="english-grid">
+
+    <!-- BEGINNER -->
+    <div class="english-card beginner">
+      <h3>Beginner (Level 1)</h3>
+      <p>Focus: Basic communication, greetings, and “to be / to have”.</p>
+      <ul>
+        <li>Lesson 1: Hi, I’m John! (Introductions)</li>
+        <li>Lesson 2: My Daily Routine</li>
+        <li>Lesson 3: Numbers, Time, and Dates</li>
+      </ul>
+      <audio controls src="audio/beginner-dialogue.mp3"></audio><br>
+      <button onclick="alert('Beginner practice coming soon!')">Practice Now</button>
+    </div>
+
+    <!-- ELEMENTARY -->
+    <div class="english-card elementary">
+      <h3>Elementary (Level 2)</h3>
+      <p>Focus: Building short conversations and using simple tenses.</p>
+      <ul>
+        <li>Lesson 1: Family & Friends</li>
+        <li>Lesson 2: At the Store</li>
+        <li>Lesson 3: Places Around Town</li>
+      </ul>
+      <button onclick="alert('Elementary practice coming soon!')">Practice Now</button>
+    </div>
+
+    <!-- INTERMEDIATE -->
+    <div class="english-card intermediate">
+      <h3>Intermediate (Level 3)</h3>
+      <p>Focus: Fluency, vocabulary expansion, and American idioms.</p>
+      <ul>
+        <li>Lesson 1: Talking About Jobs</li>
+        <li>Lesson 2: Hobbies and Leisure</li>
+        <li>Lesson 3: Travel & Experiences</li>
+      </ul>
+      <button onclick="alert('Intermediate practice coming soon!')">Practice Now</button>
+    </div>
+
+    <!-- ADVANCED -->
+    <div class="english-card advanced">
+      <h3>Advanced (Level 4)</h3>
+      <p>Focus: Debates, essay writing, and native-like expressions.</p>
+      <ul>
+        <li>Lesson 1: American Slang and Phrasal Verbs</li>
+        <li>Lesson 2: Writing Opinion Essays</li>
+        <li>Lesson 3: Public Speaking Skills</li>
+      </ul>
+      <button onclick="alert('Advanced practice coming soon!')">Practice Now</button>
+    </div>
+
+    <!-- TOEFL -->
+    <div class="english-card toefl">
+      <h3>TOEFL Preparation (Level 5)</h3>
+      <p>Focus: Academic vocabulary, comprehension, and test strategies.</p>
+      <ul>
+        <li>Reading Comprehension</li>
+        <li>Listening and Speaking Practice</li>
+        <li>Essay Writing & Integrated Tasks</li>
+      </ul>
+      <a href="https://www.ets.org/toefl/test-takers/ibt/prepare.html" target="_blank">
+        <button>Start TOEFL Practice</button>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="progress-section">
+    <h3>📊 Your Progress</h3>
+    <div class="progress-bar">
+      <div class="progress" style="width: 20%;"></div>
+    </div>
+    <p>You're currently at the Beginner Level. Keep learning!</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 ISJIEE American English Division | “Learn with Purpose, Speak with Confidence.”</p>
+</footer>
+
+</body>
+</html>
+
+.english-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.english-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.english-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: 0.3s;
+}
+
+.english-card:hover {
+  transform: translateY(-5px);
+}
+
+.beginner { border-top: 8px solid #2ecc71; }
+.elementary { border-top: 8px solid #27ae60; }
+.intermediate { border-top: 8px solid #2980b9; }
+.advanced { border-top: 8px solid #8e44ad; }
+.toefl { border-top: 8px solid #e67e22; }
+
+button {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0055aa;
+}
+
+audio {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.progress-section {
+  margin-top: 3rem;
+}
+
+.progress-bar {
+  background: #ccc;
+  border-radius: 10px;
+  height: 15px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.progress {
+  background: #003366;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s;
+}
 <section id="programmes" class="scroll-section">
   <div class="card green">
     <h2>Green Card</h2>
