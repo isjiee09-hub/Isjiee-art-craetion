@@ -732,7 +732,7 @@ ISJIEE/
   </section>
 
   <footer>
-    <p>© 2025 ISJIEE | Inspiré par la lumière, forgé dans le feu — Cadet Dieurissaint</p>
+    <p>© 2025 ISJIEE | Inspiré par la lumière, forgé dans le feu — Cadet Dieurissainty</p>
   </footer>
 
   <script>
@@ -756,7 +756,7 @@ ISJIEE/
       },
       {
         title: "Module Leadership",
-        desc: "Maîtriser la communication et le management d’équipe."
+        desc: "Maîtriser la communication et le management d’équipe."y
       }
     ];
 
@@ -782,15 +782,15 @@ ISJIEE/
 
   <section class="programmes">
     <h1>Nos Programmes ISJIEE</h1>
-    <div class="slider-container">
+    <div class="slider-contai Eric">
       <div class="slider">
         <div class="slide green">
           <h2>Green Card</h2>
           <p>Formation de base pour apprendre à créer, vendre et gérer un petit business. Accès à des ateliers pratiques et outils de démarrage.</p>
           <div class="bar">
             <div class="bar-fill green-bar" style="width: 40%"></div>
-          </div>
-          <span class="bar-label">BAR : 40% – Niveau Débutant</span>
+          </eddiv>
+          <span class="bar-label">BAR : 40% – Niveau Débuteant</span>
         </div>
 
         <div class="slide blue">
@@ -1423,6 +1423,353 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISJIEE — American English (Quizzes & Progress)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ISJIEE — American English</h1>
+    <nav><a href="index.html">🏠 Retour</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Interactive Quizzes & Progress Tracker</h2>
+      <p>Pratique l'anglais américain par niveau. Ton avancement est sauvegardé dans ton navigateur.</p>
+    </section>
+
+    <!-- NIVEAUX -->
+    <section id="levels" class="levels">
+      <!-- Les cartes de niveaux seront générées par JS -->
+    </section>
+
+    <!-- QUIZ MODAL -->
+    <div id="quizModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-content">
+        <button id="closeModal" class="close">✕</button>
+        <h3 id="quizTitle">Quiz</h3>
+        <div id="quizQuestion"></div>
+        <div id="quizOptions"></div>
+        <div class="quiz-actions">
+          <button id="submitAnswer" class="btn">Valider</button>
+          <button id="skipBtn" class="btn secondary">Passer</button>
+        </div>
+        <div id="quizFeedback" class="feedback"></div>
+      </div>
+    </div>
+
+    <!-- TABLEAU DE PROGRESSION -->
+    <section id="progress" class="progress-section">
+      <h2>Tableau de progression</h2>
+      <table id="progressTable">
+        <thead>
+          <tr><th>Niveau</th><th>Score (%)</th><th>Statut</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="progress-controls">
+        <button id="downloadCsv" class="btn">Télécharger CSV</button>
+        <button id="resetProgress" class="btn warning">Réinitialiser progression</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ISJIEE — American English</p>
+  </footer>
+
+  <script src="anglais-quiz.js"></script>
+</body>
+</html>
+/* anglais-quiz.js
+  - génère les niveaux & quiz
+  - gère storage & tableau de progression
+*/
+
+const LEVELS = [
+  { id: 'beginner', title: 'Beginner (Level 1)', target: 'Beginner' },
+  { id: 'elementary', title: 'Elementary (Level 2)', target: 'Elementary' },
+  { id: 'intermediate', title: 'Intermediate (Level 3)', target: 'Intermediate' },
+  { id: 'advanced', title: 'Advanced (Level 4)', target: 'Advanced' },
+  { id: 'toefl', title: 'TOEFL Prep (Level 5)', target: 'TOEFL' }
+];
+
+// Exemple de petits quiz par niveau (tu peux ajouter/modifier)
+const QUIZZES = {
+  beginner: [
+    {
+      q: "Complete: 'He ___ to school every day.'",
+      options: ["go", "goes", "going", "gone"],
+      answer: 1
+    },
+    {
+      q: "What's the correct American spelling?",
+      options: ["colour", "color", "colur", "coloor"],
+      answer: 1
+    }
+  ],
+  elementary: [
+    {
+      q: "Choose the right word: 'I ___ my homework yesterday.'",
+      options: ["do", "did", "done", "doing"],
+      answer: 1
+    },
+    {
+      q: "Which is a place in town?",
+      options: ["library", "cake", "sleep", "blue"],
+      answer: 0
+    }
+  ],
+  intermediate: [
+    {
+      q: "Complete the phrase: 'She has been ___ English for two years.'",
+      options: ["studying", "study", "studied", "studies"],
+      answer: 0
+    }
+  ],
+  advanced: [
+    {
+      q: "Which sentence uses a correct phrasal verb?",
+      options: ["He called off the meeting", "He called over the meeting", "He called in the meeting", "He called with the meeting"],
+      answer: 0
+    }
+  ],
+  toefl: [
+    {
+      q: "TOEFL style: What is main idea? (short passage) - 'Urbanization increases unless...' (simulate)",
+      options: ["More people move to cities", "Rural areas are better", "Cities will disappear", "None"],
+      answer: 0
+    }
+  ]
+};
+
+// Storage key
+const STORAGE_KEY = 'isjiee_english_progress_v1';
+
+// Récupère ou initialiser l'état
+function loadProgress() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) {
+    const initial = {};
+    LEVELS.forEach(l => {
+      initial[l.id] = { attempts: 0, correct: 0, score: 0 }; // score %
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
+    return initial;
+  }
+  try {
+    return JSON.parse(raw);
+  } catch(e) {
+    localStorage.removeItem(STORAGE_KEY);
+    return loadProgress();
+  }
+}
+
+function saveProgress(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+// UI génération niveaux
+const levelsContainer = document.getElementById('levels');
+const progressTableBody = document.querySelector('#progressTable tbody');
+const modal = document.getElementById('quizModal');
+const quizTitle = document.getElementById('quizTitle');
+const quizQuestion = document.getElementById('quizQuestion');
+const quizOptions = document.getElementById('quizOptions');
+const submitAnswer = document.getElementById('submitAnswer');
+const closeModal = document.getElementById('closeModal');
+const skipBtn = document.getElementById('skipBtn');
+const quizFeedback = document.getElementById('quizFeedback');
+
+let currentQuiz = null;
+let currentLevelId = null;
+let selectedOption = null;
+let progress = loadProgress();
+
+function renderLevels() {
+  levelsContainer.innerHTML = '';
+  LEVELS.forEach(l => {
+    const div = document.createElement('div');
+    div.className = 'level-card';
+    const p = progress[l.id];
+    div.innerHTML = `
+      <h3>${l.title}</h3>
+      <p>Niveau: ${l.target}</p>
+      <div class="mini-progress">
+        <div class="mini-fill" style="width:${p.score}%"></div>
+      </div>
+      <p>Score: ${p.score}% — Attempts: ${p.attempts}</p>
+      <div class="level-actions">
+        <button class="btn start-quiz" data-id="${l.id}">Lancer un quiz</button>
+        <button class="btn show-report" data-id="${l.id}">Voir le détail</button>
+      </div>
+    `;
+    levelsContainer.appendChild(div);
+  });
+
+  // lier boutons
+  document.querySelectorAll('.start-quiz').forEach(b => {
+    b.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      openQuiz(id);
+    });
+  });
+
+  document.querySelectorAll('.show-report').forEach(b => {
+    b.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      alertReport(id);
+    });
+  });
+}
+
+function renderProgressTable() {
+  progressTableBody.innerHTML = '';
+  LEVELS.forEach(l => {
+    const p = progress[l.id];
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${l.title}</td><td>${p.score}%</td><td>${p.score >= 75 ? 'Completed' : (p.score > 0 ? 'In progress' : 'Not started')}</td>`;
+    progressTableBody.appendChild(tr);
+  });
+}
+
+// Ouvrir modal et charger un quiz aléatoire du niveau
+function openQuiz(levelId) {
+  const pool = QUIZZES[levelId] || [];
+  if (pool.length === 0) {
+    alert('Aucun quiz pour ce niveau pour le moment.');
+    return;
+  }
+  currentQuiz = pool[Math.floor(Math.random() * pool.length)];
+  currentLevelId = levelId;
+  selectedOption = null;
+  quizTitle.textContent = `Quiz — ${LEVELS.find(l=>l.id===levelId).title}`;
+  quizQuestion.textContent = currentQuiz.q;
+  quizOptions.innerHTML = '';
+  currentQuiz.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.textContent = opt;
+    btn.dataset.index = i;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedOption = i;
+    });
+    quizOptions.appendChild(btn);
+  });
+  quizFeedback.textContent = '';
+  modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+// Valider réponse
+submitAnswer.addEventListener('click', () => {
+  if (selectedOption === null) {
+    quizFeedback.textContent = 'Sélectionne une option avant de valider.';
+    return;
+  }
+  const correct = (selectedOption == currentQuiz.answer);
+  // mise à jour progress
+  const state = progress[currentLevelId];
+  state.attempts += 1;
+  if (correct) state.correct += 1;
+  state.score = Math.round((state.correct / state.attempts) * 100);
+  saveProgress(progress);
+  renderLevels();
+  renderProgressTable();
+  quizFeedback.textContent = correct ? 'Bonne réponse 🎉' : `Mauvaise réponse — la bonne était: "${currentQuiz.options[currentQuiz.answer]}"`;
+  // après 1.2s fermer modal
+  setTimeout(() => closeQuiz(), 1200);
+});
+
+// skip
+skipBtn.addEventListener('click', closeQuiz);
+closeModal.addEventListener('click', closeQuiz);
+
+function closeQuiz() {
+  modal.classList.add('hidden');
+  modal.setAttribute('aria-hidden', 'true');
+  currentQuiz = null;
+  currentLevelId = null;
+  selectedOption = null;
+}
+
+// Voir détail (rapide)
+function alertReport(levelId) {
+  const s = progress[levelId];
+  alert(`${LEVELS.find(l=>l.id===levelId).title}\nAttempts: ${s.attempts}\nCorrect: ${s.correct}\nScore: ${s.score}%`);
+}
+
+// CSV download
+document.getElementById('downloadCsv').addEventListener('click', () => {
+  const rows = [['Niveau','Attempts','Correct','Score']];
+  LEVELS.forEach(l => {
+    const s = progress[l.id];
+    rows.push([l.title, s.attempts, s.correct, s.score]);
+  });
+  const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'isjiee_english_progress.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+// Reset
+document.getElementById('resetProgress').addEventListener('click', () => {
+  if (!confirm('Réinitialiser toute la progression ?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  progress = loadProgress();
+  renderLevels();
+  renderProgressTable();
+});
+
+// initial render
+renderLevels();
+renderProgressTable();
+
+/* --- Anglais : quizzes & progress --- */
+.container { max-width: 1000px; margin: 20px auto; padding: 0 18px; }
+.intro { text-align: center; margin-bottom: 16px; }
+
+.levels { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; margin: 18px 0; }
+.level-card { background:#fff; padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(2,20,50,0.06); }
+.level-card h3 { margin-bottom:6px; color:#003366; }
+.mini-progress { height:10px; background:#eee; border-radius:6px; overflow:hidden; margin:8px 0; }
+.mini-fill { height:100%; background:#003366; width:0%; transition:width .8s; }
+
+.level-actions { display:flex; gap:8px; margin-top:10px; }
+.btn { padding:8px 10px; border-radius:8px; border:none; background:#003366; color:white; cursor:pointer; }
+.btn.secondary { background:#7a8da6; }
+.btn.warning { background:#b22222; }
+
+.progress-section { margin-top:22px; background:#fff; padding:12px; border-radius:10px; box-shadow:0 6px 18px rgba(2,20,50,.05); }
+#progressTable { width:100%; border-collapse:collapse; margin-top:10px; }
+#progressTable th, #progressTable td { padding:10px; border-bottom:1px solid #eee; text-align:left; }
+
+.modal { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.5); z-index:50; }
+.modal.hidden { display:none; }
+.modal-content { background:#fff; padding:18px; border-radius:10px; width:90%; max-width:560px; position:relative; }
+.close { position:absolute; right:10px; top:8px; background:transparent; border:none; font-size:18px; cursor:pointer; }
+#quizOptions { display:flex; flex-direction:column; gap:8px; margin:12px 0; }
+.option { padding:10px; border-radius:8px; border:1px solid #ddd; background:#f7f9fb; cursor:pointer; }
+.option.selected { border-color:#003366; background:#e6f0ff; }
+.feedback { margin-top:8px; font-weight:600; color:#003366; }
+
+/* mini responsive */
+@media (max-width:600px) {
+  .level-actions { flex-direction:column; }
+  .modal-content { padding:12px; }
 }
 
 document.querySelector("form").addEventListener("submit", (e) => {
