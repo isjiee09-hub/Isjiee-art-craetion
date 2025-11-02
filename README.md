@@ -37,946 +37,194 @@ ISJIEE-Art-Creation/
 │   └── portfolio.js
 │
 └── README.md                 → Présentation du projet sur GitHub
-
-        → description officielle du projet ISJIEE
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISJIEE – Accueil</title>
-
+  <title>ISJIEE Art Creation</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
+    /* ======== STYLE GLOBAL ======== */
     body {
-      background-color: #f9fafb;
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    header {
-      height: 100vh;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(2, 132, 199, 0.6)),
-        url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      margin-top: 30px;
-      padding: 12px 28px;
-      background: #0284c7;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #0369a1;
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #0284c7;
-      margin-bottom: 20px;
-    }
-
-    .programs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      width: 280px;
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 50px;
-    }
-
-    html {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #faf7f2;
+      color: #333;
       scroll-behavior: smooth;
     }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>ISJIEE</h1>
-    <p>Inspirer – Former – Élever la nouvelle génération d’entrepreneurs</p>
-    <button class="btn" onclick="scrollToPrograms()">Consulter nos programmes</button>
-  </header>
-
-  <section id="programs">
-    <h2>Nos Programmes</h2>
-    <div class="programs">
-      <div class="card">
-        <h3>Module Green Card</h3>
-        <p>Formation sur la création et gestion d’un business physique.</p>
-      </div>
-      <div class="card">
-        <h3>Module Blue</h3>
-        <p>Développement d’entreprise digitale et services en ligne.</p>
-      </div>
-      <div class="card">
-        <h3>Module Gold</h3>
-        <p>Leadership, management et stratégie de croissance.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 ISJIEE | Inspiré par la lumière, forgé dans le feu — Cadet Dieurissaint</p>
-  </footer>
-
-  <script>
-    function scrollToPrograms() {
-      document.getElementById("programs").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISJIEE – Accueil</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background-color: #f9fafb;
-      color: #222;
-      overflow-x: hidden;
-    }
 
     header {
-      height: 100vh;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(2, 132, 199, 0.65)),
-        url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      margin-top: 30px;
-      padding: 12px 28px;
-      background: #0284c7;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #0369a1;
-    }
-
-    /* --- Kayla Animation --- */
-    .kayla {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      width: 180px;
-      animation: float 4s ease-in-out infinite;
-      border-radius: 50%;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #0284c7;
-      margin-bottom: 20px;
-    }
-
-    .programs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      width: 280px;
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 50px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>ISJIEE</h1>
-    <p>Inspirer – Former – Élever la nouvelle génération d’entrepreneurs</p>
-    <button class="btn" onclick="scrollToPrograms()">Consulter nos programmes</button>
-
-    <!-- Image de Kayla -->
-    <img src="https://i.imgur.com/n1E3rjA.png" alt="Kayla" class="kayla" />
-  </header>
-
-  <section id="programs">
-    <h2>Nos Programmes</h2>
-    <div class="programs">
-      <div class="card">
-        <h3>Module Green Card</h3>
-        <p>Formation sur la création et gestion d’un business physique.</p>
-      </div>
-      <div class="card">
-        <h3>Module Blue</h3>
-        <p>Développement d’entreprise digitale et services en ligne.</p>
-      </div>
-      <div class="card">
-        <h3>Module Gold</h3>
-        <p>Leadership, management et stratégie de croissance.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 ISJIEE | Inspiré par la lumière, forgé dans le feu — Cadet Dieurissaint</p>
-  </footer>
-
-  <script>
-    function scrollToPrograms() {
-      document.getElementById("programs").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISJIEE – Accueil</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background-color: #f9fafb;
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    header {
-      height: 100vh;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(2, 132, 199, 0.65)),
-        url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      margin-top: 30px;
-      padding: 12px 28px;
-      background: #0284c7;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #0369a1;
-    }
-
-    /* --- Kayla Animation --- */
-    .kayla {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      width: 180px;
-      animation: float 4s ease-in-out infinite;
-      border-radius: 50%;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #0284c7;
-      margin-bottom: 20px;
-    }
-
-    .programs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      width: 280px;
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
-    /* --- Cahier de charge section --- */
-    .cahier {
-      background: #e0f2fe;
+      background: linear-gradient(to right, #fff, #f2ede9);
       padding: 60px 20px;
-      border-top: 3px solid #0284c7;
+      text-align: center;
+      animation: fadeIn 2s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
-    .cahier ul {
-      list-style: none;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
+    header h1 {
+      font-size: 2.5rem;
+      color: #6a4d2f;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #6a4d2f;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c79a63;
+    }
+
+    /* ======== SECTION À PROPOS ======== */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeUp 1s ease;
+    }
+
+    section h2 {
+      text-align: center;
+      color: #6a4d2f;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    section p {
+      text-align: center;
+      color: #555;
       line-height: 1.8;
     }
 
-    .cahier li {
-      margin: 12px 0;
-      padding-left: 20px;
-      position: relative;
+    /* ======== GALERIE ======== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 40px;
     }
 
-    .cahier li::before {
-      content: "🔥";
-      position: absolute;
-      left: 0;
-      top: 0;
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* ======== FOOTER ======== */
     footer {
-      background: #0f172a;
-      color: white;
+      background: #f0e7dd;
       text-align: center;
-      padding: 30px 0;
-      margin-top: 50px;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      color: #6a4d2f;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>ISJIEE</h1>
-    <p>Inspirer – Former – Élever la nouvelle génération d’entrepreneurs</p>
-    <button class="btn" onclick="scrollToPrograms()">Consulter nos programmes</button>
-
-    <!-- Image de Kayla -->
-    <img src="https://i.imgur.com/n1E3rjA.png" alt="Kayla" class="kayla" />
-  </header>
-
-  <section id="programs">
-    <h2>Nos Programmes</h2>
-    <div class="programs">
-      <div class="card">
-        <h3>Module Green Card</h3>
-        <p>Formation sur la création et gestion d’un business physique.</p>
-      </div>
-      <div class="card">
-        <h3>Module Blue</h3>
-        <p>Développement d’entreprise digitale et services en ligne.</p>
-      </div>
-      <div class="card">
-        <h3>Module Gold</h3>
-        <p>Leadership, management et stratégie de croissance.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cahier" id="cahier">
-    <h2>Cahier de charge du projet ISJIEE</h2>
-    <ul>
-      <li>Créer un écosystème d’apprentissage pour jeunes entrepreneurs.</li>
-      <li>Proposer des formations modulaires (Green, Blue, Gold).</li>
-      <li>Intégrer l’assistante IA Kayla comme guide interactif.</li>
-      <li>Permettre l’accès à des ressources (audio, PDF, vidéos).</li>
-      <li>Offrir un tableau de bord personnel et un espace de progression.</li>
-      <li>Mettre en ligne les badges et certificats de réussite ISJIEE.</li>
-      <li>Développer une version mobile et web intégrée.</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 ISJIEE | Inspiré par la lumière, forgé dans le feu — Cadet Dieurissaint</p>
-  </footer>
-
-  <script>
-    function scrollToPrograms() {
-      document.getElementById("programs").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISJIEE – Accueil</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+    /* ======== ANIMATIONS ======== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    body {
-      background-color: #f9fafb;
-      color: #222;
-      overflow-x: hidden;
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    header {
-      height: 100vh;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(2, 132, 199, 0.65)),
-        url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
+    /* ======== BOUTON INTERACTIF ======== */
     .btn {
-      margin-top: 30px;
-      padding: 12px 28px;
-      background: #0284c7;
+      display: inline-block;
+      background: #c79a63;
       color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
       transition: background 0.3s ease;
     }
 
     .btn:hover {
-      background: #0369a1;
-    }
-
-    /* Kayla animation */
-    .kayla {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      width: 180px;
-      animation: float 4s ease-in-out infinite;
-      border-radius: 50%;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #0284c7;
-      margin-bottom: 20px;
-    }
-
-    .programs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      width: 280px;
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
-    .cahier {
-      background: #e0f2fe;
-      padding: 60px 20px;
-      border-top: 3px solid #0284c7;
-    }
-
-    .cahier ul {
-      list-style: none;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-      line-height: 1.8;
-    }
-
-    .cahier li {
-      margin: 12px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .cahier li::before {
-      content: "🔥";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 50px;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      background: #b5874e;
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <h1>ISJIEE</h1>
-    <p>Inspirer – Former – Élever la nouvelle génération d’entrepreneurs</p>
-    <button class="btn" onclick="scrollToPrograms()">Consulter nos programmes</button>
-    <img src="https://i.imgur.com/n1E3rjA.png" alt="Kayla" class="kayla" />
+    <h1>ISJIEE Art Creation</h1>
+    <p>Créativité, Formation et Innovation</p>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section id="programs">
-    <h2>Nos Programmes</h2>
-    <div class="programs" id="programList"></div>
+  <section id="about">
+    <h2>Notre Mission</h2>
+    <p>ISJIEE Art Creation est une plateforme dédiée à l’expression artistique, 
+    à la créativité entrepreneuriale et à la formation des jeunes talents. 
+    Nous croyons en la puissance de l’art et de l’éducation pour inspirer et transformer.</p>
   </section>
 
-  <section class="cahier" id="cahier">
-    <h2>Cahier de charge du projet ISJIEE</h2>
-    <ul>
-      <li>Créer un écosystème d’apprentissage pour jeunes entrepreneurs.</li>
-      <li>Proposer des formations modulaires (Green, Blue, Gold).</li>
-      <li>Intégrer l’assistante IA Kayla comme guide interactif.</li>
-      <li>Permettre l’accès à des ressources (audio, PDF, vidéos).</li>
-      <li>Offrir un tableau de bord personnel et un espace de progression.</li>
-      <li>Mettre en ligne les badges et certificats de réussite ISJIEE.</li>
-      <li>Développer une version mobile et web intégrée.</li>
-    </ul>
+  <section id="portfolio">
+    <h2>Notre Portfolio</h2>
+    <div class="gallery">
+      <img src="assets/art1.jpg" alt="Création artistique 1">
+      <img src="assets/art2.jpg" alt="Création artistique 2">
+      <img src="assets/art3.jpg" alt="Création artistique 3">
+      <img src="assets/art4.jpg" alt="Création artistique 4">
+    </div>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="portfolio.html" class="btn">Voir tout le portfolio</a>
+    </div>
+  </section>
+
+  <section id="programmes">
+    <h2>Nos Programmes</h2>
+    <p>Découvrez nos initiatives :</p>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="modules/green-card.html" class="btn">Green Card</a>
+      <a href="modules/programme-anglais.html" class="btn">Programme Anglais</a>
+      <a href="modules/system-bar.html" class="btn">Système BAR</a>
+      <a href="modules/creativite.html" class="btn">Créativité & Innovation</a>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 ISJIEE | Inspiré par la lumière, forgé dans le feu — Cadet Dieurissainty</p>
+    © 2025 ISJIEE Art Creation | Tous droits réservés.
   </footer>
 
   <script>
-    function scrollToPrograms() {
-      document.getElementById("programs").scrollIntoView({ behavior: "smooth" });
-    }
-
-    // --- Liste automatique des programmes ---
-    const programs = [
-      {
-        title: "Module Green Card",
-        desc: "Formation sur la création et gestion d’un business physique."
-      },
-      {
-        title: "Module Blue",
-        desc: "Développement d’entreprise digitale et services en ligne."
-      },
-      {
-        title: "Module Gold",
-        desc: "Leadership, management et stratégie de croissance."
-      },
-      {
-        title: "Module Leadership",
-        desc: "Maîtriser la communication et le management d’équipe."y
-      }
-    ];
-
-    const container = document.getElementById("programList");
-
-    programs.forEach(prog => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `<h3>${prog.title}</h3><p>${prog.desc}</p>`;
-      container.appendChild(card);
+    // Animation au défilement
+    window.addEventListener("scroll", function() {
+      document.querySelectorAll("section").forEach(section => {
+        const position = section.getBoundingClientRect().top;
+        if (position < window.innerHeight - 100) {
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
+        }
+      });
     });
-  </scri
+  </script>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISJIEE Programmes</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <section class="programmes">
-    <h1>Nos Programmes ISJIEE</h1>
-    <div class="slider-contai Eric">
-      <div class="slider">
-        <div class="slide green">
-          <h2>Green Card</h2>
-          <p>Formation de base pour apprendre à créer, vendre et gérer un petit business. Accès à des ateliers pratiques et outils de démarrage.</p>
-          <div class="bar">
-            <div class="bar-fill green-bar" style="width: 40%"></div>
-          </eddiv>
-          <span class="bar-label">BAR : 40% – Niveau Débuteant</span>
-        </div>
-
-        <div class="slide blue">
-          <h2>Blue Card</h2>
-          <p>Formation avancée pour développer ton entreprise digitale. Stratégies de marketing, communication et positionnement professionnel.</p>
-          <div class="bar">
-            <div class="bar-fill blue-bar" style="width: 60%"></div>
-          </div>
-          <span class="bar-label">BAR : 60% – Niveau Intermédiaire</span>
-        </div>
-
-        <div class="slide gold">
-          <h2>Gold</h2>
-          <p>Programme élite pour les jeunes entrepreneurs. Coaching, financement partiel et accès à des mentors expérimentés.</p>
-          <div class="bar">
-            <div class="bar-fill gold-bar" style="width: 80%"></div>
-          </div>
-          <span class="bar-label">BAR : 80% – Niveau Avancé</span>
-        </div>
-
-        <div class="slide leadership">
-          <h2>Leadership Voice</h2>
-          <p>Formation centrée sur le leadership et la communication d’impact. Développe ton influence et ta vision entrepreneuriale.</p>
-          <div class="bar">
-            <div class="bar-fill purple-bar" style="width: 100%"></div>
-          </div>
-          <span class="bar-label">BAR : 100% – Niveau Maîtrise</span>
-        </div>
-      </div>
-
-      <!-- Barre de navigation -->
-      <div class="nav-bar">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: #f5f7fa;
-  color: #222;
-  overflow-x: hidden;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 2rem;
-  color: #1a1a1a;
-}
-
-.slider-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 50px auto;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.7s ease;
-  width: 400%;
-}
-
-.slide {
-  flex: 1 0 100%;
-  padding: 60px 40px;
-  box-sizing: border-box;
-  color: white;
-  text-align: center;
-}
-
-.green { background: linear-gradient(120deg, #00b894, #55efc4); }
-.blue { background: linear-gradient(120deg, #0984e3, #74b9ff); }
-.gold { background: linear-gradient(120deg, #d4af37, #f9d976); color: #333; }
-.leadership { background: linear-gradient(120deg, #6c5ce7, #a29bfe); }
-
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  background-color: rgba(255,255,255,0.6);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #fff;
-  transform: scale(1.2);
-}
-
-/* === BAR SYSTEM === */
-.bar {
-  background: rgba(255, 255, 255, 0.3);
-  height: 10px;
-  border-radius: 10px;
-  margin: 25px auto 10px;
-  width: 80%;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 1.5s ease;
-}
-
-.green-bar { background-color: #00e676; }
-.blue-bar { background-color: #0984e3; }
-.gold-bar { background-color: #d4af37; }
-.purple-bar { background-color: #6c5ce7; }
-
-.bar-label {
-  display: block;
-  font-size: 0.9rem;
-  margin-top: 5px;
-  opacity: 0.9;
-}
-let currentIndex = 0;
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-
-function showSlide(index) {
-  const slider = document.querySelector(".slider");
-  if (index >= slides.length) index = 0;
-  if (index < 0) index = slides.length - 1;
-  currentIndex = index;
-  slider.style.transform = `translateX(-${index * 100}%)`;
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-}
-
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => showSlide(i));
-});
-,
-setInterval(() => {
-  showSlide(currentIndex + 1);
-}, 5000);
-
+  
 /ISJIEE
 │
 ├── index.html              → page principale (Programmes)
