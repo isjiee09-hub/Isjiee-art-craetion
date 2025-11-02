@@ -1,21 +1,44 @@
 
-ISJIEE/
+ISJIEE-Art-Creation/
 │
-├── index.html          → page d’accueil (vitrine avec Kayla)
-├── style.css           → design général
-├── script.js           → animations, défilements, effets Kayla
+├── index.html                → Page d’accueil (thème blanc/beige, menu principal)
+├── style.css                 → Design global du site
+├── script.js                 → Animations et effets dynamiques
 │
-├── /assets/            → images, icônes, audios
-│   ├── kayla.png
+├── /assets/                  → Images, vidéos, icônes
 │   ├── logo.png
+│   ├── background.jpg
+│   ├── art1.jpg
+│   ├── art2.jpg
+│   ├── art3.jpg
+│   └── audio/                → (si tu ajoutes une voix ou musique)
 │
-│
-├── /modules/           → sous-pages ISJIEE
+├── /modules/                 → Sous-pages ou programmes
 │   ├── green-card.html
-│   ├── blue-card.html
-│   └── gold-card.html
+│   ├── programme-anglais.html
+│   ├── system-bar.html
+│   ├── creativite.html
+│   └── leadership.html
 │
-└── README.md           → description officielle du projet ISJIEE
+├── /portfolio/               → Dossier dédié à tes créations
+│   ├── portfolio.html
+│   ├── art-gallery.html
+│   └── projets/              → sous-dossier pour projets spécifiques
+│
+├── /docs/                    → Documents PDF, guides, e-books
+│   ├── Guide_GreenCard.pdf
+│   ├── Formation_Guerriere.pdf
+│   └── English_Level1.pdf
+│
+├── /css/                     → (optionnel) pour séparer les styles de modules
+│   └── green-card.css
+│
+├── /js/                      → (optionnel) pour scripts spécifiques
+│   └── portfolio.js
+│
+└── README.md                 → Présentation du projet sur GitHub
+
+        → description officielle du projet ISJIEE
 <!DOCTYPE html>
 <html lang="fr">
 <head>
