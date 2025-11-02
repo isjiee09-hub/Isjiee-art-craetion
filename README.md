@@ -8,7 +8,7 @@ ISJIEE/
 ├── /assets/            → images, icônes, audios
 │   ├── kayla.png
 │   ├── logo.png
-│   └── background.mp3
+│
 │
 ├── /modules/           → sous-pages ISJIEE
 │   ├── green-card.html
