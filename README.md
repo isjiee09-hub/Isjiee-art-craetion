@@ -224,7 +224,427 @@ ISJIEE-Art-Creation/
 
 </body>
 </html>
-  
+
+  <!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISJIEE ArtCreation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER (menu animé) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="ISJIEE Logo" class="logo" />
+        <div class="brand-text">
+          <h1>ISJIEE ArtCreation</h1>
+          <div class="tag">Design · Formation · Création</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="main-nav">
+        <a href="index.html" class="nav-link active">Accueil</a>
+        <a href="portfolio/portfolio.html" class="nav-link">Portfolio</a>
+        <a href="modules/green-card.html" class="nav-link">Green Card</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Studio & Formation</div>
+        <h2>Créations visuelles & parcours pour jeunes entrepreneurs</h2>
+        <p class="lead">ISJIEE ArtCreation conçoit, forme et accompagne les jeunes artistes — ateliers, mentorat, portfolio professionnel et formations spécialisées.</p>
+        <div class="hero-actions">
+          <a class="btn" href="modules/green-card.html">Green Card</a>
+          <a class="btn ghost" href="portfolio/portfolio.html">Entrer dans la galerie</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="drop-box" id="drop-hero" title="Dépose une image ici pour remplacer l'illustration">
+          <img src="assets/placeholder.jpg" alt="illustration" id="hero-img">
+          <div class="drop-note">Dépose une image ici pour remplacer l'illustration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="card-section">
+      <h3>Notre mission</h3>
+      <p class="muted">Accompagner les jeunes talents par la formation pratique et des projets réels : workshops, mentorat, et diffusion. Nous transformons des idées en produits et parcours professionnels.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card-section">
+      <h3>Contact</h3>
+      <form id="contact-form" class="contact-form">
+        <input type="text" id="name" placeholder="Votre nom" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="message" placeholder="Message" rows="4" required></textarea>
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+      <p class="muted small">Téléphones: +509 38447063 / 31457642</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 ISJIEE ArtCreation — Inspiré par la lumière, forgé dans le feu — Cadet Dieurissaint</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+:root{
+  --bg:#faf7f2;
+  --card:#ffffff;
+  --muted:#8b7d74;
+  --accent:#caa76b;
+  --accent-2:#6b5847;
+  --shadow:0 8px 28px rgba(18,16,16,0.06);
+  --radius:14px;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#222;background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+/* HEADER */
+.site-header{background:linear-gradient(90deg,#fff,#f3ede6);box-shadow:var(--shadow);position:sticky;top:0;z-index:60}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:58px;height:58px;border-radius:10px;object-fit:cover}
+.brand-text h1{margin:0;font-size:18px;color:var(--accent-2)}
+.brand-text .tag{font-size:12px;color:var(--muted)}
+
+/* NAV */
+.nav{display:flex;align-items:center;gap:12px}
+.nav-link{padding:8px 12px;text-decoration:none;color:var(--accent-2);font-weight:700;border-radius:10px;position:relative;transition:all .24s ease}
+.nav-link:hover{background:rgba(202,167,107,0.08);transform:translateY(-2px)}
+.nav-link.active{background:linear-gradient(90deg,var(--accent),#e8d6b0);color:#fff;box-shadow:0 8px 20px rgba(202,167,107,0.14)}
+#nav-toggle{display:none;background:transparent;border:0;font-size:20px;cursor:pointer}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;padding:32px 0}
+.kicker{font-weight:800;color:var(--muted);letter-spacing:1px}
+h2{color:var(--accent-2);margin:6px 0 12px}
+.lead{color:var(--muted);max-width:55ch}
+.hero-actions{margin-top:14px;display:flex;gap:12px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent-2)}
+
+/* DROP BOX */
+.drop-box{background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;transition:transform .18s}
+.drop-box.drag{transform:translateY(-6px);box-shadow:0 20px 40px rgba(18,16,16,0.08)}
+.drop-box img{max-width:100%;max-height:200px;border-radius:10px;object-fit:cover}
+.drop-note{color:var(--muted);font-size:13px;margin-top:8px}
+
+/* SECTIONS */
+.card-section{background:transparent;padding:26px 0}
+.card-section h3{color:var(--accent-2);margin-bottom:8px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* GALLERY SHARED */
+.tools{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.upload-btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+.upload-btn input{display:none}
+.drop-zone{background:linear-gradient(180deg,#fff,#f9f3ea);padding:18px;border-radius:12px;border:2px dashed rgba(122,107,95,0.12);min-height:130px;display:flex;align-items:center;justify-content:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.gallery-item{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.gallery-item img{width:100%;height:180px;object-fit:cover;display:block}
+.gallery-item .meta{padding:10px;display:flex;justify-content:space-between;align-items:center}
+.clear-btn{background:transparent;border:0;color:var(--muted);cursor:pointer}
+
+/* FOOTER */
+.site-footer{padding:22px 0;background:transparent;color:var(--muted);text-align:center}
+
+/* ANIMATIONS & RESPONSIVE */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;gap:14px}
+  .header-inner{flex-direction:column;gap:8px}
+  #nav-toggle{display:block}
+  .nav{position:relative}
+  .nav.opened{display:block;background:transparent}
+}
+
+/* script.js
+   - Drag & drop hero and gallery
+   - Upload via input
+   - Persist gallery & hero via localStorage
+   - Animated nav toggle and active link
+*/
+
+// ----------------- helpers -----------------
+function dataURLFromFile(file){
+  return new Promise((res, rej) => {
+    const reader = new FileReader();
+    reader.onload = () => res(reader.result);
+    reader.onerror = () => rej(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+// ----------------- HERO DROP -----------------
+const heroDrop = document.getElementById('drop-hero');
+const heroImg = document.getElementById('hero-img');
+if(heroDrop){
+  ['dragenter','dragover'].forEach(e => heroDrop.addEventListener(e, ev => { ev.preventDefault(); heroDrop.classList.add('drag'); }));
+  ['dragleave','drop'].forEach(e => heroDrop.addEventListener(e, ev => { ev.preventDefault(); heroDrop.classList.remove('drag'); }));
+  heroDrop.addEventListener('drop', async (ev) => {
+    const f = ev.dataTransfer.files[0];
+    if(!f || !f.type.startsWith('image/')) return;
+    const url = await dataURLFromFile(f);
+    heroImg.src = url;
+    localStorage.setItem('isj_hero', url);
+  });
+  // load saved hero
+  const savedHero = localStorage.getItem('isj_hero');
+  if(savedHero) heroImg.src = savedHero;
+}
+
+// ----------------- GALLERY -----------------
+const dropGallery = document.getElementById('drop-gallery');
+const gallery = document.getElementById('gallery');
+const fileInput = document.getElementById('file-input');
+const clearBtn = document.getElementById('clear-gallery');
+
+let images = JSON.parse(localStorage.getItem('isj_gallery') || '[]');
+
+function renderGallery(){
+  if(!gallery) return;
+  gallery.innerHTML = '';
+  images.forEach((dataUrl, i) => {
+    const el = document.createElement('div');
+    el.className = 'gallery-item';
+    el.innerHTML = `
+      <img src="${dataUrl}" alt="image-${i}">
+      <div class="meta">
+        <div style="font-size:13px;color:${getComputedStyle(document.documentElement).getPropertyValue('--muted')}">Image ${i+1}</div>
+        <div>
+          <button class="clear-btn" data-index="${i}">Supprimer</button>
+        </div>
+      </div>
+    `;
+    gallery.appendChild(el);
+  });
+}
+renderGallery();
+
+if(dropGallery){
+  ['dragenter','dragover'].forEach(e => dropGallery.addEventListener(e, ev => { ev.preventDefault(); dropGallery.classList.add('drag'); }));
+  ['dragleave','drop'].forEach(e => dropGallery.addEventListener(e, ev => { ev.preventDefault(); dropGallery.classList.remove('drag'); }));
+  dropGallery.addEventListener('drop', async (ev) => {
+    const files = Array.from(ev.dataTransfer.files).filter(f => f.type.startsWith('image/')).slice(0,12);
+    for(const f of files){
+      const url = await dataURLFromFile(f);
+      images.unshift(url);
+    }
+    localStorage.setItem('isj_gallery', JSON.stringify(images));
+    renderGallery();
+  });
+}
+
+if(fileInput){
+  fileInput.addEventListener('change', async (ev) => {
+    const f = ev.target.files[0];
+    if(!f) return;
+    if(!f.type.startsWith('image/')) return alert('Choisir une image.');
+    const url = await dataURLFromFile(f);
+    images.unshift(url);
+    localStorage.setItem('isj_gallery', JSON.stringify(images));
+    renderGallery();
+    fileInput.value = '';
+  });
+}
+
+if(clearBtn){
+  clearBtn.addEventListener('click', () => {
+    if(!confirm('Vider la galerie localement ?')) return;
+    images = [];
+    localStorage.removeItem('isj_gallery');
+    renderGallery();
+  });
+}
+
+// delete single
+if(gallery){
+  gallery.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('button[data-index]');
+    if(!btn) return;
+    const idx = Number(btn.dataset.index);
+    images.splice(idx, 1);
+    localStorage.setItem('isj_gallery', JSON.stringify(images));
+    renderGallery();
+  });
+}
+
+// ----------------- CONTACT -----------------
+const contact = document.getElementById('contact-form');
+if(contact){
+  contact.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    if(!name || !email || !msg) return alert('Remplis tous les champs');
+    // ouverture du client mail (remplace si backend)
+    window.location.href = `mailto:isjiee.artcreation@example.com?subject=${encodeURIComponent('Contact: '+name)}&body=${encodeURIComponent(msg + '\\n\\nEmail: ' + email)}`;
+  });
+}
+
+// ----------------- NAV ANIMATION & MOBILE -----------------
+const nav = document.getElementById('main-nav');
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelectorAll('.nav-link');
+
+if(navToggle){
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('opened');
+    // simple mobile behaviour: toggle links display
+    if(nav.classList.contains('opened')){
+      nav.style.flexDirection = 'column';
+      nav.style.gap = '8px';
+    } else {
+      nav.style.flexDirection = '';
+      nav.style.gap = '';
+    }
+  });
+}
+
+// set active on click
+navLinks.forEach(a => a.addEventListener('click', (e) => {
+  navLinks.forEach(x => x.classList.remove('active'));
+  e.currentTarget.classList.add('active');
+}));
+
+// Intersection observer to add active class while scrolling (optional)
+const sections = document.querySelectorAll('main section[id], main section');
+const linkMap = {};
+navLinks.forEach(link => {
+  const href = link.getAttribute('href') || '';
+  if(href.startsWith('#')){
+    linkMap[href.slice(1)] = link;
+  }
+});
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if(!en.target.id) return;
+    if(en.isIntersecting && linkMap[en.target.id]){
+      navLinks.forEach(l => l.classList.remove('active'));
+      linkMap[en.target.id].classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+sections.forEach(s => io.observe(s));
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio — ISJIEE</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/logo.png" alt="ISJIEE" class="logo">
+        <h1>Portfolio</h1>
+      </div>
+      <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="../modules/green-card.html">Green Card</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Galerie</h2>
+
+      <div class="tools">
+        <label class="upload-btn">
+          Ajouter image
+          <input id="file-input" type="file" accept="image/*">
+        </label>
+        <button id="clear-gallery" class="btn ghost">Vider la galerie</button>
+      </div>
+
+      <div id="drop-gallery" class="drop-zone">
+        <div class="drop-note">Dépose tes images ici (glisser-déposer) — supporte plusieurs</div>
+      </div>
+
+      <div id="gallery" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© ISJIEE ArtCreation</div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Green Card — ISJIEE</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/logo.png" alt="ISJIEE" class="logo">
+        <h1>Green Card</h1>
+      </div>
+      <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../portfolio/portfolio.html">Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Programme Green Card</h2>
+      <p class="muted">Module d'initiation entrepreneuriale pour jeunes — structuré par profils : Produits physiques, Services virtuels, Mode & Beauté.</p>
+
+      <div class="module-card">
+        <h3>Objectifs</h3>
+        <ul>
+          <li>Comprendre l'idée de produit</li>
+          <li>Valider un marché avec peu de budget</li>
+          <li>Créer un prototype et une offre commerciale</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <h3>Ressources</h3>
+        <p>Ajoute tes PDFs dans /docs/ et crée des liens ici pour les télécharger.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© ISJIEE ArtCreation</div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
 /ISJIEE
 │
 ├── index.html              → page principale (Programmes)
