@@ -73,7 +73,10 @@ ISJIEE-Art-Creation/
     │   └── content.js   → sauvegarde du contenu texte
     ├── /uploads/        → images sauvegardées
 
-    └── package.json     → dépendances 
+    └── package.json     → dépendances # depuis le dossier server
+cp .env.example .env        # crée ton .env local à partir de l'exemple
+npm install                 # installe les dépendances
+npm run dev                 # ou `npm start` si pas nodemon
 (Express, Multer, Cors)
 {
   "name": "isj-site-api",
