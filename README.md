@@ -49,6 +49,30 @@ ISJIEE-Art-Creation/
 └── modules/
     ├── green-card.html
     └── education-financiere.html
+ISJIEE-Art-Creation/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── /portfolio/
+│   └── portfolio.html
+│
+├── /modules/
+│   ├── green-card.html
+│   └── education-financiere.html
+│
+├── /assets/
+│   ├── logo.png
+│   └── placeholder.jpg
+│
+└── /server/
+    ├── server.js        → serveur Node.js / Express
+    ├── routes/
+    │   ├── upload.js    → gestion des images
+    │   └── content.js   → sauvegarde du contenu texte
+    ├── /uploads/        → images sauvegardées
+    └── package.json     → dépendances (Express, Multer, Cors)
 
 <!doctype html>
 <html lang="fr">
