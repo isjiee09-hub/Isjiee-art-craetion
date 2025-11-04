@@ -50,6 +50,621 @@ ISJIEE-Art-Creation/
     ├── green-card.html
     └── education-financiere.html
 
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISJIEE Art Creation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="ISJIEE Logo" class="logo" id="logo-img">
+        <div class="brand-text">
+          <h1 id="site-title" data-editable="true">ISJIEE ArtCreation</h1>
+          <div class="tag" id="site-tag" data-editable="true">Design · Formation · Création</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="main-nav">
+        <a href="index.html" class="nav-link active">Accueil</a>
+        <a href="portfolio/portfolio.html" class="nav-link">Portfolio</a>
+        <a href="modules/green-card.html" class="nav-link">Green Card</a>
+        <a href="modules/education-financiere.html" class="nav-link">Éducation Financière</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker" data-editable="true">Studio & Formation</div>
+        <h2 id="hero-title" data-editable="true">Créations visuelles & parcours pour jeunes entrepreneurs</h2>
+        <p class="lead" id="hero-lead" data-editable="true">ISJIEE ArtCreation conçoit, forme et accompagne les jeunes artistes — ateliers, mentorat, portfolio professionnel et formations spécialisées.</p>
+        <div class="hero-actions">
+          <a class="btn" href="modules/green-card.html">Green Card</a>
+          <a class="btn ghost" href="portfolio/portfolio.html">Entrer dans la galerie</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="drop-box editable-img" id="drop-hero" data-key="hero_image" title="Dépose une image ici pour remplacer l'illustration">
+          <img src="assets/placeholder.jpg" alt="illustration" id="hero-img" data-editable-img>
+          <div class="drop-note">Dépose une image ici pour remplacer l'illustration</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="card-section">
+      <h3 data-editable="true">Notre mission</h3>
+      <p class="muted" id="about-text" data-editable="true">
+        Accompagner les jeunes talents par la formation pratique et des projets réels : workshops, mentorat, et diffusion.
+      </p>
+    </section>
+
+    <section id="contact" class="card-section">
+      <h3 data-editable="true">Contact</h3>
+      <form id="contact-form" class="contact-form">
+        <input type="text" id="name" placeholder="Votre nom" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="message" placeholder="Message" rows="4" required></textarea>
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+      <p class="muted small">Téléphones: <span data-editable="true">+509 38447063 / 31457642</span></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div id="footer-text" data-editable="true">© 2025 ISJIEE Art Creation — Inspiré par la lumière, forgé dans le feu — Cadet Dieurissaint</div>
+    </div>
+  </footer>
+
+  <!-- Edit Mode toggle -->
+  <div id="editor-tools">
+    <button id="toggle-edit" title="Mode édition">✏️ Mode édition</button>
+    <button id="reset-page" title="Réinitialiser la page">♻️ Réinitialiser</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio — ISJIEE</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-page="portfolio">
+
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/logo.png" alt="ISJIEE" class="logo">
+        <h1 data-editable="true">Portfolio</h1>
+      </div>
+      <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="../modules/green-card.html">Green Card</a>
+        <a href="../modules/education-financiere.html">Éducation Financière</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-editable="true">Galerie</h2>
+
+      <div class="tools">
+        <label class="upload-btn">
+          Ajouter image
+          <input id="file-input" type="file" accept="image/*" multiple>
+        </label>
+        <button id="clear-gallery" class="btn ghost">Vider la galerie</button>
+      </div>
+
+      <div id="drop-gallery" class="drop-zone editable-img" data-key="gallery_images">
+        <div class="drop-note">Dépose tes images ici (glisser-déposer) — supporte plusieurs</div>
+      </div>
+
+      <div id="gallery" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© ISJIEE ArtCreation</div>
+  </footer>
+
+  <div id="editor-tools">
+    <button id="toggle-edit" title="Mode édition">✏️ Mode édition</button>
+    <button id="reset-page" title="Réinitialiser la page">♻️ Réinitialiser</button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Green Card — ISJIEE</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-page="green-card">
+
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/logo.png" alt="ISJIEE" class="logo">
+        <h1 data-editable="true">Green Card</h1>
+      </div>
+      <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../portfolio/portfolio.html">Portfolio</a>
+        <a href="green-card.html" class="active">Green Card</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-editable="true">Programme Green Card</h2>
+      <p class="muted" id="green-desc" data-editable="true">
+        Module d'initiation entrepreneuriale pour jeunes — structuré par profils : Produits physiques, Services virtuels, Mode & Beauté.
+      </p>
+
+      <div class="module-card" data-editable="true">
+        <h3>Objectifs</h3>
+        <ul>
+          <li>Comprendre l'idée de produit</li>
+          <li>Valider un marché avec peu de budget</li>
+          <li>Créer un prototype et une offre commerciale</li>
+        </ul>
+      </div>
+
+      <div class="module-card" data-editable="true">
+        <h3>Ressources</h3>
+        <p>Ajoute tes PDFs dans /docs/ et crée des liens ici pour les télécharger.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© ISJIEE ArtCreation</div>
+  </footer>
+
+  <div id="editor-tools">
+    <button id="toggle-edit" title="Mode édition">✏️ Mode édition</button>
+    <button id="reset-page" title="Réinitialiser la page">♻️ Réinitialiser</button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Éducation Financière — ISJIEE</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-page="education-financiere">
+
+  <header class="site-header small">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/logo.png" alt="ISJIEE" class="logo">
+        <h1 data-editable="true">Éducation Financière</h1>
+      </div>
+      <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../portfolio/portfolio.html">Portfolio</a>
+        <a href="education-financiere.html" class="active">Éducation Financière</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 data-editable="true">Programme d'éducation financière</h2>
+      <p class="muted" id="ef-desc" data-editable="true">
+        Introduction aux bases de la gestion d'argent, budget, épargne, investissement simple et création d'un petit portefeuille. Conçu pour les jeunes entrepreneurs.
+      </p>
+
+      <div class="module-card">
+        <h3 data-editable="true">Modules</h3>
+        <ol data-editable="true">
+          <li>Budget personnel & planification</li>
+          <li>Épargne intelligente et objectifs</li>
+          <li>Micro-investissement et risques</li>
+          <li>Gestion de trésorerie pour projets</li>
+        </ol>
+      </div>
+
+      <div class="module-card" data-editable="true">
+        <h3>Supports</h3>
+        <p>Ajoute des PDFs dans /docs/ (Guide d'épargne, feuille de budget) ou des audios dans /assets/audio/.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© ISJIEE ArtCreation</div>
+  </footer>
+
+  <div id="editor-tools">
+    <button id="toggle-edit" title="Mode édition">✏️ Mode édition</button>
+    <button id="reset-page" title="Réinitialiser la page">♻️ Réinitialiser</button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+:root{
+  --bg:#faf7f2;
+  --card:#ffffff;
+  --muted:#8b7d74;
+  --accent:#caa76b;
+  --accent-2:#6b5847;
+  --shadow:0 8px 28px rgba(18,16,16,0.06);
+  --radius:14px;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#222;background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+/* HEADER */
+.site-header{background:linear-gradient(90deg,#fff,#f3ede6);box-shadow:var(--shadow);position:sticky;top:0;z-index:60}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:58px;height:58px;border-radius:10px;object-fit:cover}
+.brand-text h1{margin:0;font-size:18px;color:var(--accent-2)}
+.brand-text .tag{font-size:12px;color:var(--muted)}
+
+/* NAV */
+.nav{display:flex;align-items:center;gap:12px}
+.nav-link{padding:8px 12px;text-decoration:none;color:var(--accent-2);font-weight:700;border-radius:10px;position:relative;transition:all .24s ease}
+.nav-link:hover{background:rgba(202,167,107,0.08);transform:translateY(-2px)}
+.nav-link.active{background:linear-gradient(90deg,var(--accent),#e8d6b0);color:#fff;box-shadow:0 8px 20px rgba(202,167,107,0.14)}
+#nav-toggle{display:none;background:transparent;border:0;font-size:20px;cursor:pointer}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;padding:32px 0}
+.kicker{font-weight:800;color:var(--muted);letter-spacing:1px}
+h2{color:var(--accent-2);margin:6px 0 12px}
+.lead{color:var(--muted);max-width:55ch}
+.hero-actions{margin-top:14px;display:flex;gap:12px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent-2)}
+
+/* DROP BOX */
+.drop-box{background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;transition:transform .18s}
+.drop-box.drag{transform:translateY(-6px);box-shadow:0 20px 40px rgba(18,16,16,0.08)}
+.drop-box img{max-width:100%;max-height:200px;border-radius:10px;object-fit:cover}
+.drop-note{color:var(--muted);font-size:13px;margin-top:8px}
+
+/* SECTIONS */
+.card-section{background:transparent;padding:26px 0}
+.card-section h3{color:var(--accent-2);margin-bottom:8px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* GALLERY SHARED */
+.tools{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.upload-btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+.upload-btn input{display:none}
+.drop-zone{background:linear-gradient(180deg,#fff,#f9f3ea);padding:18px;border-radius:12px;border:2px dashed rgba(122,107,95,0.12);min-height:130px;display:flex;align-items:center;justify-content:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.gallery-item{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.gallery-item img{width:100%;height:180px;object-fit:cover;display:block}
+.gallery-item .meta{padding:10px;display:flex;justify-content:space-between;align-items:center}
+.clear-btn{background:transparent;border:0;color:var(--muted);cursor:pointer}
+
+/* EDITOR TOOLS */
+#editor-tools{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:120}
+#editor-tools button{background:var(--card);border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:10px;cursor:pointer;box-shadow:var(--shadow)}
+[contenteditable="true"]{outline: 2px dashed transparent; transition: outline .12s ease}
+.editing [contenteditable="true"]{outline:2px dashed rgba(106,77,47,0.2);padding:2px;border-radius:6px}
+
+/* small screens */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;gap:14px}
+  .header-inner{flex-direction:column;gap:8px}
+  #nav-toggle{display:block}
+  .nav{position:relative}
+  .nav.opened{display:block;background:transparent}
+}
+/* script.js
+   - Shared for all pages
+   - Features:
+     * Drag & drop images (hero + gallery)
+     * File input upload
+     * Persist data per page in localStorage
+     * Edit mode (toggle to enable contenteditable and image edits)
+     * Reset page to defaults (clears saved localStorage for that page)
+     * Navigation active link handling
+*/
+
+// ----------------- Helpers -----------------
+function dataURLFromFile(file){
+  return new Promise((res, rej) => {
+    const reader = new FileReader();
+    reader.onload = () => res(reader.result);
+    reader.onerror = () => rej(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+const page = document.body.dataset.page || 'index';
+const STORAGE_PREFIX = 'isj_site_v1_'; // version key (increment if breaking changes)
+function storageKey(key){ return STORAGE_PREFIX + page + '_' + key; }
+
+// ----------------- EDIT MODE -----------------
+const toggleEditBtn = document.querySelectorAll('#toggle-edit');
+const resetBtns = document.querySelectorAll('#reset-page');
+
+function setEditMode(on){
+  if(on){
+    document.body.classList.add('editing');
+    // make editable all elements with data-editable
+    document.querySelectorAll('[data-editable="true"]').forEach(el=>{
+      el.setAttribute('contenteditable','true');
+    });
+    // show instruction
+  } else {
+    document.body.classList.remove('editing');
+    document.querySelectorAll('[data-editable="true"]').forEach(el=>{
+      el.removeAttribute('contenteditable');
+    });
+    // save current editable content automatically
+    saveEditable();
+  }
+}
+
+function saveEditable(){
+  const items = {};
+  document.querySelectorAll('[data-editable="true"]').forEach(el=>{
+    // store innerHTML to support simple markup
+    const key = el.id || el.dataset.key || ('editable_' + hashPath(el));
+    items[key] = el.innerHTML;
+  });
+  if(Object.keys(items).length) localStorage.setItem(storageKey('edits'), JSON.stringify(items));
+}
+
+// restore edits on load
+function restoreEditable(){
+  const raw = localStorage.getItem(storageKey('edits'));
+  if(!raw) return;
+  try{
+    const items = JSON.parse(raw);
+    document.querySelectorAll('[data-editable="true"]').forEach(el=>{
+      const key = el.id || el.dataset.key || ('editable_' + hashPath(el));
+      if(items[key] !== undefined) el.innerHTML = items[key];
+    });
+  }catch(e){}
+}
+
+// small helper to build a key from element path
+function hashPath(el){
+  let p = [];
+  while(el && el.tagName){
+    let s = el.tagName.toLowerCase();
+    if(el.id) s += '#'+el.id;
+    if(el.className) s += '.'+el.className.toString().split(' ').join('.');
+    p.unshift(s);
+    el = el.parentElement;
+  }
+  return p.join('>');
+}
+
+// toggle buttons wiring (multiple on pages)
+toggleEditBtn.forEach(b => b.addEventListener('click', ()=>{
+  const on = !document.body.classList.contains('editing');
+  setEditMode(on);
+  b.textContent = on ? '💾 Quitter édition' : '✏️ Mode édition';
+}));
+
+resetBtns.forEach(b => b.addEventListener('click', ()=>{
+  if(!confirm('Réinitialiser les changements locaux pour cette page ?')) return;
+  localStorage.removeItem(storageKey('edits'));
+  // remove images saved for this page
+  localStorage.removeItem(storageKey('hero_image'));
+  localStorage.removeItem(storageKey('gallery_images'));
+  // reload to restore defaults
+  location.reload();
+}));
+
+// auto-save when contenteditable loses focus
+document.addEventListener('focusout', (ev)=>{
+  if(ev.target && ev.target.hasAttribute('contenteditable')) saveEditable();
+});
+
+// restore at startup
+restoreEditable();
+
+// ----------------- NAV
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(a => a.addEventListener('click', ()=>{
+  navLinks.forEach(x=>x.classList.remove('active'));
+  a.classList.add('active');
+}));
+
+// ----------------- HERO IMAGE (editable)
+document.querySelectorAll('.editable-img').forEach(zone=>{
+  const key = zone.dataset.key || 'hero_image';
+  // load saved
+  if(key === 'hero_image'){
+    const saved = localStorage.getItem(storageKey('hero_image'));
+    const img = zone.querySelector('img');
+    if(saved && img) img.src = saved;
+  }
+
+  // drag events
+  ['dragenter','dragover'].forEach(ev => zone.addEventListener(ev, e=>{
+    e.preventDefault(); zone.classList.add('drag');
+  }));
+  ['dragleave','drop'].forEach(ev => zone.addEventListener(ev, e=>{
+    e.preventDefault(); zone.classList.remove('drag');
+  }));
+
+  zone.addEventListener('drop', async (e)=>{
+    // only allow image edits in edit mode
+    if(!document.body.classList.contains('editing') && zone.dataset.key === 'hero_image'){
+      return alert('Active le Mode édition pour changer cette image.');
+    }
+    const files = Array.from(e.dataTransfer.files).filter(f=>f.type && f.type.startsWith('image/'));
+    if(!files.length) return;
+    for(const f of files){
+      const url = await dataURLFromFile(f);
+      // if this zone contains one image (hero), set it
+      const img = zone.querySelector('img');
+      if(img){
+        img.src = url;
+        if(zone.dataset.key === 'hero_image'){ localStorage.setItem(storageKey('hero_image'), url); }
+      } else {
+        // if this is gallery zone, push into gallery (handled separately)
+        addImageToGallery(url);
+      }
+    }
+  });
+});
+
+// ----------------- GALLERY (specific)
+const galleryEl = document.getElementById('gallery');
+const dropGallery = document.getElementById('drop-gallery');
+const fileInput = document.getElementById('file-input');
+const clearBtn = document.getElementById('clear-gallery');
+
+let images = JSON.parse(localStorage.getItem(storageKey('gallery_images')) || '[]');
+
+function renderGallery(){
+  if(!galleryEl) return;
+  galleryEl.innerHTML = '';
+  images.forEach((dataUrl, i)=>{
+    const el = document.createElement('div'); el.className = 'gallery-item';
+    el.innerHTML = `
+      <img src="${dataUrl}" alt="image-${i}" data-editable-img>
+      <div class="meta">
+        <div contenteditable="${document.body.classList.contains('editing')}" data-edit-label>Image ${i+1}</div>
+        <div>
+          <button class="clear-btn" data-index="${i}">Supprimer</button>
+        </div>
+      </div>
+    `;
+    galleryEl.appendChild(el);
+  });
+}
+renderGallery();
+
+function saveGallery(){ localStorage.setItem(storageKey('gallery_images'), JSON.stringify(images)); }
+
+function addImageToGallery(url){
+  images.unshift(url);
+  saveGallery();
+  renderGallery();
+}
+
+// drop area for gallery (supports multiple)
+if(dropGallery){
+  ['dragenter','dragover'].forEach(ev => dropGallery.addEventListener(ev, e=>{ e.preventDefault(); dropGallery.classList.add('drag'); }));
+  ['dragleave','drop'].forEach(ev => dropGallery.addEventListener(ev, e=>{ e.preventDefault(); dropGallery.classList.remove('drag'); }));
+  dropGallery.addEventListener('drop', async (e)=>{
+    // require edit mode to add via drop (protect accidental drops)
+    if(!document.body.classList.contains('editing')){
+      return alert('Active le Mode édition pour ajouter des images à la galerie.');
+    }
+    const files = Array.from(e.dataTransfer.files).filter(f=>f.type && f.type.startsWith('image/')).slice(0,24);
+    for(const f of files){
+      const url = await dataURLFromFile(f);
+      images.unshift(url);
+    }
+    saveGallery(); renderGallery();
+  });
+}
+
+// file input upload (works in edit mode)
+if(fileInput){
+  fileInput.addEventListener('change', async (e)=>{
+    if(!document.body.classList.contains('editing')) return alert('Active le Mode édition pour ajouter une image.');
+    const files = Array.from(e.target.files || []).filter(f=>f.type && f.type.startsWith('image/')).slice(0,12);
+    for(const f of files){
+      const url = await dataURLFromFile(f);
+      images.unshift(url);
+    }
+    saveGallery(); renderGallery(); fileInput.value = '';
+  });
+}
+
+// clear gallery
+if(clearBtn){
+  clearBtn.addEventListener('click', ()=>{
+    if(!document.body.classList.contains('editing') && !confirm('Tu n\'es pas en mode édition. Continuer?')) return;
+    if(!confirm('Vider la galerie localement?')) return;
+    images = []; saveGallery(); renderGallery();
+  });
+}
+
+// delete single
+if(galleryEl){
+  galleryEl.addEventListener('click', (ev)=>{
+    const btn = ev.target.closest('button[data-index]');
+    if(!btn) return;
+    const idx = Number(btn.dataset.index);
+    images.splice(idx,1); saveGallery(); renderGallery();
+  });
+}
+
+// helper used by other scripts to add images
+window.addImageToGallery = addImageToGallery;
+
+// ----------------- Load saved hero image globally
+document.querySelectorAll('img[data-editable-img]').forEach(img=>{
+  const key = img.closest('.editable-img') && img.closest('.editable-img').dataset.key;
+  if(key === 'hero_image'){
+    const saved = localStorage.getItem(storageKey('hero_image'));
+    if(saved) img.src = saved;
+  }
+});
+
+// ----------------- CONTACT FORM
+const contact = document.getElementById('contact-form');
+if(contact){
+  contact.addEventListener('submit', (ev)=>{
+    ev.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    if(!name || !email || !msg) return alert('Remplis tous les champs');
+    window.location.href = `mailto:isjiee.artcreation@example.com?subject=${encodeURIComponent('Contact: '+name)}&body=${encodeURIComponent(msg+'\\n\\nEmail: '+email)}`;
+  });
+}
+
+// ----------------- small nav toggle for mobile
+const nav = document.getElementById('main-nav');
+const navToggle = document.getElementById('nav-toggle');
+if(navToggle){
+  navToggle.addEventListener('click', ()=>{
+    nav.classList.toggle('opened');
+    if(nav.classList.contains('opened')){
+      nav.style.flexDirection = 'column'; nav.style.gap = '8px';
+    } else { nav.style.flexDirection = ''; nav.style.gap = ''; }
+  });
+}
+
+// ----------------- Save editable content before unload
+window.addEventListener('beforeunload', ()=> saveEditable());
+
 README.md                 → Présentation du projet sur GitHub
 <!DOCTYPE html>
 <html lang="fr">
