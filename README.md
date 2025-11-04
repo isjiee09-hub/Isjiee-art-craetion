@@ -36,7 +36,21 @@ ISJIEE-Art-Creation/
 ├── /js/                      → (optionnel) pour scripts spécifiques
 │   └── portfolio.js
 │
-└── README.md                 → Présentation du projet sur GitHub
+└── 
+ISJIEE-Art-Creation/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── logo.png
+│   └── placeholder.jpg
+├── portfolio/
+│   └── portfolio.html
+└── modules/
+    ├── green-card.html
+    └── education-financiere.html
+
+README.md                 → Présentation du projet sur GitHub
 <!DOCTYPE html>
 <html lang="fr">
 <head>
