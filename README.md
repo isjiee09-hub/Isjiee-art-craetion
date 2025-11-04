@@ -72,8 +72,124 @@ ISJIEE-Art-Creation/
     │   ├── upload.js    → gestion des images
     │   └── content.js   → sauvegarde du contenu texte
     ├── /uploads/        → images sauvegardées
-    └── package.json     → dépendances (Express, Multer, Cors)
 
+    └── package.json     → dépendances 
+(Express, Multer, Cors)
+{
+  "name": "isj-site-api",
+  "version": "1.0.0",
+  "description": "API pour ISJIEE ArtCreation - upload images & sauvegarde contenu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "morgan": "^1.10.0",
+    "helmet": "^6.0.1",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^11.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}PORT=4000
+UPLOAD_DIR=uploads
+BASE_URL=http://localhost:4000
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const path = require('path');
+const fs = require('fs-extra');
+
+const uploadRoutes = require('./routes/upload');
+const contentRoutes = require('./routes/content');
+
+const PORT = process.env.PORT || 4000;
+const UPLOAD_DIR = process.env.UPLOAD_DIR || 'uploads';
+
+// ensure upload dir exists
+fs.ensureDirSync(path.join(__dirname, UPLOAD_DIR));
+
+const app = express();
+
+app.use(helmet());
+app.use(cors({
+  origin: true, // pour limiter, remplace true par ton front-end (ex: 'https://tonsite.github.io')
+  credentials: true
+}));
+app.use(morgan('tiny'));
+app.use(express.json({ limit: '5mb' })); // textes JSON
+app.use(express.urlencoded({ extended: true }));
+
+// Routes API
+app.use('/api/upload', uploadRoutes);
+app.use('/api/content', contentRoutes);
+
+// Servir les fichiers uploadés statiquement
+app.use('/uploads', express.static(path.join(__dirname, UPLOAD_DIR)));
+
+// Simple health check
+app.get('/health', (req, res) => res.json({ ok: true, time: Date.now() }));
+
+app.listen(PORT, () => {
+  console.log(`ISJ API running on port ${PORT}`);
+});
+
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs-extra');
+const router = express.Router();
+
+const UPLOAD_DIR = process.env.UPLOAD_DIR || 'uploads';
+const STORAGE_PATH = path.join(__dirname, '..', UPLOAD_DIR);
+
+// configure storage
+const storage = multer.diskStorage({
+  destination: async (req, file, cb) => {
+    await fs.ensureDir(STORAGE_PATH);
+    cb(null, STORAGE_PATH);
+  },
+  filename: (req, file, cb) => {
+    // filename: timestamp-originalname
+    const safeName = file.originalname.replace(/\s+/g, '-').replace(/[^\w.-]/g, '');
+    const name = `${Date.now()}-${safeName}`;
+    cb(null, name);
+  }
+});
+
+const upload = multer({
+  storage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5 MB limit
+  fileFilter: (req, file, cb) => {
+    if (!file.mimetype.startsWith('image/')) return cb(new Error('Seules les images sont acceptées'), false);
+    cb(null, true);
+  }
+});
+
+// POST /api/upload/image
+router.post('/image', upload.single('image'), (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'Aucun fichier reçu' });
+  // build public URL
+  const base = process.env.BASE_URL || `${req.protocol}://${req.get('host')}`;
+  const url = `${base}/uploads/${req.file.filename}`;
+  res.json({ ok: true, url, filename: req.file.filename });
+});
+
+// Option: multiple files
+router.post('/images', upload.array('images', 24), (req, res) => {
+  const base = process.env.BASE_URL || `${req.protocol}://${req.get('host')}`;
+  const urls = (req.files || []).map(f => `${base}/uploads/${f.filename}`);
+  res.json({ ok: true, urls });
+});
+
+module.exports = router;
 <!doctype html>
 <html lang="fr">
 <head>
