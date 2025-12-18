@@ -912,5 +912,5 @@ window.addImageToGallery = addImageToGallery;
 
 
 
-      
+       
   
