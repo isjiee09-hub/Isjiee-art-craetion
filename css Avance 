@@ -1,0 +1,6 @@
+:root {
+    --primary: #caa76b;     /* Couleur principale */
+    --secondary: #6b5847;    /* Couleur secondaire */
+    --success: #4CAF50;      /* Succès */
+    --danger: #f44336;       /* Erreur */
+}
