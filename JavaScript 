@@ -1,5 +1,64 @@
+// config.js - Configuration globale du site ISJIEE
+
 const SITE_CONFIG = {
-  payment: {
-    paypal: "https://paypal.me/isjiee"
-  }
+    version: '2.0.0',
+    siteName: 'ISJIEE',
+    author: 'Cadet Dieurissaint',
+    email: 'contact@isjiee.ht',
+    phone: '+50938447063',
+    
+    // Couleurs
+    colors: {
+        primary: '#caa76b',
+        secondary: '#6b5847',
+        success: '#4CAF50',
+        danger: '#f44336',
+        warning: '#ff9800',
+        info: '#2196F3'
+    },
+    
+    // Liens de paiement
+    payment: {
+        paypal: 'https://paypal.me/isjiee',
+        moncash: 'https://moncash.com/isjiee',
+        stripe: 'https://buy.stripe.com/isjiee'
+    },
+    
+    // Réseaux sociaux
+    social: {
+        facebook: 'https://facebook.com/isjiee',
+        instagram: 'https://instagram.com/isjiee',
+        youtube: 'https://youtube.com/@isjiee',
+        tiktok: 'https://tiktok.com/@isjiee',
+        linkedin: 'https://linkedin.com/company/isjiee'
+    },
+    
+    // Vidéos par défaut
+    videos: {
+        main: 'VIDEO_ID_1',
+        gallery: [
+            { id: 'VIDEO_ID_2', title: 'Présentation Green Card' },
+            { id: 'VIDEO_ID_3', title: 'Témoignages' },
+            { id: 'VIDEO_ID_4', title: 'Formation Marketing' }
+        ]
+    },
+    
+    // Programmes
+    programs: {
+        greencard: {
+            price: 150,
+            currency: 'USD',
+            duration: '3 mois'
+        },
+        wing: {
+            price: 200,
+            currency: 'USD',
+            duration: '6 mois'
+        }
+    }
 };
+
+// Exporter pour utilisation dans d'autres fichiers
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = SITE_CONFIG;
+}
