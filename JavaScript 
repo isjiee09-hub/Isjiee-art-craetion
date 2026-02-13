@@ -1,0 +1,5 @@
+const SITE_CONFIG = {
+  payment: {
+    paypal: "https://paypal.me/isjiee"
+  }
+};
