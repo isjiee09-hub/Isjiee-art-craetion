@@ -1,25 +1,335 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>ISJIEE</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISJIEE - Création & Formation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Barre d'administration (visible seulement en mode édition) -->
+    <div id="admin-bar" class="admin-bar">
+        <div class="admin-container">
+            <span class="admin-title">⚙️ Mode Administration</span>
+            <div class="admin-buttons">
+                <button id="toggle-edit" class="admin-btn"><i class="fas fa-edit"></i> Mode édition</button>
+                <button id="save-config" class="admin-btn"><i class="fas fa-save"></i> Sauvegarder</button>
+                <button id="reset-config" class="admin-btn"><i class="fas fa-undo"></i> Réinitialiser</button>
+                <button id="view-stats" class="admin-btn"><i class="fas fa-chart-bar"></i> Statistiques</button>
+            </div>
+        </div>
+    </div>
 
-<header class="site-header">
-  <div class="container">
-    <h1>ISJIEE</h1>
-  </div>
-</header>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <img src="assets/logo.png" alt="ISJIEE Logo" class="logo" id="site-logo" data-editable="image">
+                    <div class="site-title" data-editable="text" data-key="site_title">ISJIEE</div>
+                </div>
+                
+                <nav class="main-nav" id="mainNav">
+                    <a href="#accueil" class="nav-link active">Accueil</a>
+                    <a href="#about" class="nav-link">À propos</a>
+                    <a href="#green-card" class="nav-link">Green Card</a>
+                    <a href="#videos" class="nav-link">Vidéos</a>
+                    <a href="#winginfluenceur" class="nav-link">WingInfluenceur</a>
+                    <a href="#marketing" class="nav-link">Marketing</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#shop" class="nav-link">Boutique</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<section class="hero-section">
-  <div class="container">
-    <h2>Finance & Art Creation</h2>
-    <button id="paypalBtn" class="btn">Faire un don</button>
-  </div>
-</section>
+    <main>
+        <!-- SECTION 1: ACCUEIL / HERO -->
+        <section id="accueil" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title" data-editable="text" data-key="hero_title">
+                            ISJIEE <span class="highlight">Création & Formation</span>
+                        </h1>
+                        <p class="hero-subtitle" data-editable="text" data-key="hero_subtitle">
+                            Inspiré par la lumière, forgé dans le feu
+                        </p>
+                        <p class="hero-description" data-editable="text" data-key="hero_desc">
+                            Accompagnement des jeunes talents haïtiens vers l'excellence entrepreneuriale et créative
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#green-card" class="btn btn-primary">Découvrir Green Card</a>
+                            <a href="#videos" class="btn btn-secondary">Voir les vidéos</a>
+                            <button class="btn btn-outline" id="donateBtn"><i class="fas fa-heart"></i> Faire un don</button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/hero-placeholder.jpg" alt="ISJIEE Hero" id="hero-image" data-editable="image">
+                        <button class="change-image-btn" data-target="hero-image"><i class="fas fa-camera"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script src="config.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+        <!-- SECTION 2: OBJECTIF, VISION, MISSION -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title" data-editable="text" data-key="about_title">Qui sommes-nous ?</h2>
+                
+                <div class="about-grid">
+                    <!-- Objectif -->
+                    <div class="about-card">
+                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 data-editable="text" data-key="objectif_title">Notre Objectif</h3>
+                        <p data-editable="text" data-key="objectif_text">
+                            Former et accompagner 1000 jeunes entrepreneurs haïtiens d'ici 2028, en leur fournissant les outils et connaissances nécessaires pour réussir dans l'économie moderne.
+                        </p>
+                        <button class="edit-icon" data-target="objectif_text"><i class="fas fa-pencil-alt"></i></button>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="about-card">
+                        <div class="card-icon"><i class="fas fa-eye"></i></div>
+                        <h3 data-editable="text" data-key="vision_title">Notre Vision</h3>
+                        <p data-editable="text" data-key="vision_text">
+                            Devenir le principal catalyseur de l'innovation et de la créativité en Haïti, créant un écosystème où les jeunes talents peuvent s'épanouir et rayonner internationalement.
+                        </p>
+                        <button class="edit-icon" data-target="vision_text"><i class="fas fa-pencil-alt"></i></button>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="about-card">
+                        <div class="card-icon"><i class="fas fa-hand-heart"></i></div>
+                        <h3 data-editable="text" data-key="mission_title">Notre Mission</h3>
+                        <p data-editable="text" data-key="mission_text">
+                            Offrir des formations pratiques, un mentorat personnalisé et des opportunités de réseautage pour permettre aux jeunes de transformer leurs idées en entreprises durables.
+                        </p>
+                        <button class="edit-icon" data-target="mission_text"><i class="fas fa-pencil-alt"></i></button>
+                    </div>
+                </div>
+
+                <!-- Valeurs -->
+                <div class="values-section">
+                    <h3 data-editable="text" data-key="values_title">Nos Valeurs</h3>
+                    <div class="values-grid">
+                        <span class="value-tag" data-editable="text" data-key="value1">🔆 Excellence</span>
+                        <span class="value-tag" data-editable="text" data-key="value2">🤝 Solidarité</span>
+                        <span class="value-tag" data-editable="text" data-key="value3">💡 Innovation</span>
+                        <span class="value-tag" data-editable="text" data-key="value4">🌍 Ouverture</span>
+                        <span class="value-tag" data-editable="text" data-key="value5">🔥 Passion</span>
+                        <span class="value-tag" data-editable="text" data-key="value6">📈 Intégrité</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: GREEN CARD PROGRAMME -->
+        <section id="green-card" class="green-card-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-editable="text" data-key="greencard_title">Programme Green Card</h2>
+                    <p class="section-subtitle" data-editable="text" data-key="greencard_subtitle">
+                        La formation entrepreneuriale complète pour les jeunes ambitieux
+                    </p>
+                </div>
+
+                <div class="program-content">
+                    <div class="program-left">
+                        <div class="program-image">
+                            <img src="assets/greencard-placeholder.jpg" alt="Green Card" id="greencard-image" data-editable="image">
+                            <button class="change-image-btn" data-target="greencard-image"><i class="fas fa-camera"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="program-right">
+                        <div class="program-description" data-editable="text" data-key="greencard_desc">
+                            <p>Le programme Green Card est une formation intensive de 3 mois qui couvre tous les aspects de la création et gestion d'entreprise :</p>
+                        </div>
+
+                        <ul class="program-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-editable="text" data-key="feature1">Création d'entreprise et business model</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-editable="text" data-key="feature2">Marketing digital et réseaux sociaux</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-editable="text" data-key="feature3">Gestion financière et comptable</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-editable="text" data-key="feature4">Personal branding et communication</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-editable="text" data-key="feature5">Mentorat personnalisé</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-editable="text" data-key="feature6">Réseautage et partenariats</span></li>
+                        </ul>
+
+                        <div class="program-price" data-editable="text" data-key="greencard_price">
+                            <span class="price">150$ USD</span> <span class="price-note">par participant</span>
+                        </div>
+
+                        <div class="program-buttons">
+                            <button class="btn btn-primary" id="greencardPaymentBtn"><i class="fas fa-credit-card"></i> Payer maintenant</button>
+                            <a href="#" class="btn btn-secondary" id="greencardInfoBtn">Plus d'infos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Témoignages -->
+                <div class="testimonials">
+                    <h3 data-editable="text" data-key="testimonials_title">Ils ont participé au programme</h3>
+                    <div class="testimonials-grid">
+                        <div class="testimonial">
+                            <img src="assets/testimonial1.jpg" alt="Témoin" data-editable="image">
+                            <p data-editable="text" data-key="testimonial1">"Green Card a changé ma vie, j'ai lancé ma propre entreprise de design"</p>
+                            <cite>- Marie J.</cite>
+                        </div>
+                        <div class="testimonial">
+                            <img src="assets/testimonial2.jpg" alt="Témoin" data-editable="image">
+                            <p data-editable="text" data-key="testimonial2">"Les meilleurs 3 mois de formation que j'ai jamais faits"</p>
+                            <cite>- Pierre L.</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ESPACE VIDÉO / VITRINE -->
+        <section id="videos" class="videos-section">
+            <div class="container">
+                <h2 class="section-title" data-editable="text" data-key="videos_title">Espace Vidéo / Vitrine</h2>
+                
+                <div class="video-gallery">
+                    <!-- Vidéo principale -->
+                    <div class="main-video">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/VIDEO_ID" 
+                                title="ISJIEE Présentation" frameborder="0" allowfullscreen id="main-video" 
+                                data-editable="video" data-key="main_video"></iframe>
+                        <button class="edit-video-btn" data-target="main-video">Changer la vidéo</button>
+                    </div>
+
+                    <!-- Grille de vidéos -->
+                    <h3 data-editable="text" data-key="videos_grid_title">Nos dernières créations</h3>
+                    <div class="video-grid" id="videoGrid">
+                        <!-- Les vidéos seront générées dynamiquement -->
+                    </div>
+
+                    <!-- Bouton pour ajouter une vidéo (mode édition) -->
+                    <button id="addVideoBtn" class="btn btn-outline add-video-btn" style="display: none;">
+                        <i class="fas fa-plus"></i> Ajouter une vidéo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WINGINFLUENCEUR - MARKETING -->
+        <section id="winginfluenceur" class="wing-section">
+            <div class="container">
+                <h2 class="section-title" data-editable="text" data-key="wing_title">WingInfluenceur</h2>
+                <p class="section-subtitle" data-editable="text" data-key="wing_subtitle">
+                    Devenez influenceur avec ISJIEE
+                </p>
+
+                <div class="wing-content">
+                    <div class="wing-text">
+                        <h3 data-editable="text" data-key="wing_offer_title">Ce que nous offrons</h3>
+                        <ul class="wing-list">
+                            <li><i class="fas fa-star"></i> <span data-editable="text" data-key="wing_item1">Formation au personal branding</span></li>
+                            <li><i class="fas fa-star"></i> <span data-editable="text" data-key="wing_item2">Stratégie de contenu personnalisée</span></li>
+                            <li><i class="fas fa-star"></i> <span data-editable="text" data-key="wing_item3">Mise en relation avec des marques</span></li>
+                            <li><i class="fas fa-star"></i> <span data-editable="text" data-key="wing_item4">Monétisation de votre audience</span></li>
+                        </ul>
+                        <button class="btn btn-primary" id="wingPaymentBtn">Rejoindre le programme</button>
+                    </div>
+                    <div class="wing-image">
+                        <img src="assets/wing-placeholder.jpg" alt="WingInfluenceur" id="wing-image" data-editable="image">
+                        <button class="change-image-btn" data-target="wing-image"><i class="fas fa-camera"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: MARKETING ESPACE -->
+        <section id="marketing" class="marketing-section">
+            <div class="container">
+                <h2 class="section-title" data-editable="text" data-key="marketing_title">Espace Marketing</h2>
+                
+                <div class="marketing-grid">
+                    <div class="marketing-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4 data-editable="text" data-key="marketing1_title">Stratégie Digitale</h4>
+                        <p data-editable="text" data-key="marketing1_desc">Plan marketing personnalisé pour votre entreprise</p>
+                        <button class="btn-small">En savoir plus</button>
+                    </div>
+                    
+                    <div class="marketing-card">
+                        <i class="fas fa-ad"></i>
+                        <h4 data-editable="text" data-key="marketing2_title">Publicité Social Media</h4>
+                        <p data-editable="text" data-key="marketing2_desc">Campagnes Facebook, Instagram, TikTok optimisées</p>
+                        <button class="btn-small">En savoir plus</button>
+                    </div>
+                    
+                    <div class="marketing-card">
+                        <i class="fas fa-search"></i>
+                        <h4 data-editable="text" data-key="marketing3_title">SEO & Référencement</h4>
+                        <p data-editable="text" data-key="marketing3_desc">Apparaissez en première page des recherches</p>
+                        <button class="btn-small">En savoir plus</button>
+                    </div>
+                    
+                    <div class="marketing-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4 data-editable="text" data-key="marketing4_title">Email Marketing</h4>
+                        <p data-editable="text" data-key="marketing4_desc">Campagnes d'emails qui convertissent</p>
+                        <button class="btn-small">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FORMULAIRE DE CONTACT & BOUTONS PAIEMENT -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Formulaire de contact -->
+                    <div class="contact-form-container">
+                        <h2 data-editable="text" data-key="contact_title">Contactez-nous</h2>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Votre email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Votre téléphone">
+                            </div>
+                            <div class="form-group">
+                                <select id="subject">
+                                    <option value="general">Question générale</option>
+                                    <option value="greencard">Programme Green Card</option>
+                                    <option value="wing">WingInfluenceur</option>
+                                    <option value="marketing">Services marketing</option>
+                                    <option value="partnership">Partenariat</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" placeholder="Votre message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Envoyer
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Informations et paiement -->
+                    <div class="contact-info">
+                        <h3 data-editable="text" data-key="info_title">Informations</h3>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span data-editable="text" data-key="contact_phone">+509 3844 7063</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span data-editable="text" data-key="contact_email">contact@isjiee.ht</span>
+          
