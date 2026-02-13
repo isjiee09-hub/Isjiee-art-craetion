@@ -1,0 +1,5 @@
+payment: {
+    paypal: 'https://paypal.me/isjiee',
+    moncash: 'https://moncash.com/isjiee',
+    stripe: 'https://buy.stripe.com/isjiee'
+}
