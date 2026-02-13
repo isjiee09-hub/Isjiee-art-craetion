@@ -2,4 +2,10 @@ payment: {
     paypal: 'https://paypal.me/isjiee',
     moncash: 'https://moncash.com/isjiee',
     stripe: 'https://buy.stripe.com/isjiee'
+}social: {
+    facebook: 'https://facebook.com/isjiee',
+    instagram: 'https://instagram.com/isjiee',
+    youtube: 'https://youtube.com/@isjiee',
+    tiktok: 'https://tiktok.com/@isjiee',
+    linkedin: 'https://linkedin.com/company/isjiee'
 }
