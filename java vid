@@ -1,0 +1,7 @@
+videos: {
+    main: 'VIDEO_ID_1',
+    gallery: [
+        { id: 'VIDEO_ID_2', title: 'Titre 1' },
+        { id: 'VIDEO_ID_3', title: 'Titre 2' }
+    ]
+}
